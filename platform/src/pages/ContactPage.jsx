@@ -11,7 +11,7 @@ function ContactPage() {
       <div className="contact-grid">
         <div className="contact-left">
           <img
-            src="/src/assets/icons/contact.svg"
+            src="/icons/contact.svg"
             alt=""
             className="contact-icon"
           />

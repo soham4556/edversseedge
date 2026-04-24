@@ -9,7 +9,7 @@ function TestSeriesPage() {
       <div className="services-grid">
         <article className="service-card">
           <img
-            src="/src/assets/icons/testseries.svg"
+            src="/icons/testseries.svg"
             alt=""
             className="service-icon"
           />
@@ -24,7 +24,7 @@ function TestSeriesPage() {
 
         <article className="service-card">
           <img
-            src="/src/assets/icons/testseries.svg"
+            src="/icons/testseries.svg"
             alt=""
             className="service-icon"
           />
@@ -39,7 +39,7 @@ function TestSeriesPage() {
 
         <article className="service-card">
           <img
-            src="/src/assets/icons/testseries.svg"
+            src="/icons/testseries.svg"
             alt=""
             className="service-icon"
           />

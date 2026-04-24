@@ -24,7 +24,7 @@ function DownloadPage() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/src/assets/icons/android.svg" alt="Android" />
+            <img src="/icons/android.svg" alt="Android" />
             <div>
               <div style={{ fontWeight: 800 }}>Get it on Google Play</div>
               <div className="muted">Tap to download the EdversseEDGE app</div>
@@ -42,7 +42,7 @@ function DownloadPage() {
         <div className="download-right">
           <div className="phone-mock">
             <img
-              src="/src/assets/icons/unnamed.webp"
+              src="/icons/unnamed.webp"
               alt="App preview"
               className="phone-screen-img"
             />

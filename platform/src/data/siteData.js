@@ -26,7 +26,7 @@ export const courses = [
       "Board + entrance integrated worksheets",
       "Weekly chapter tests with review",
     ],
-    icon: "/src/assets/icons/class.svg",
+    icon: "/icons/class.svg",
     popular: false,
   },
   {
@@ -41,7 +41,7 @@ export const courses = [
       "Full-syllabus mock strategy",
       "Mentor-led error correction sessions",
     ],
-    icon: "/src/assets/icons/iit.svg",
+    icon: "/icons/iit.svg",
     popular: true,
   },
   {
@@ -56,7 +56,7 @@ export const courses = [
       "Physics-Chemistry concept mastery",
       "Test analytics with improvement roadmap",
     ],
-    icon: "/src/assets/icons/neet.svg",
+    icon: "/icons/neet.svg",
     popular: false,
   },
 ];

@@ -9,7 +9,7 @@ function ScholarshipsPage() {
       <div className="scholar-grid">
         <div className="scholar-left">
           <img
-            src="/src/assets/icons/scholarship.svg"
+            src="/icons/scholarship.svg"
             alt=""
             className="scholar-icon"
           />

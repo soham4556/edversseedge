@@ -46,7 +46,7 @@ function HomePage() {
 
             <div className="hero-app">
               <a className="app-badge" href="/download">
-                <img src="/src/assets/icons/android.svg" alt="Android" />
+                <img src="/icons/android.svg" alt="Android" />
                 <div>
                   <div style={{ fontWeight: 800 }}>
                     Download Our Android App

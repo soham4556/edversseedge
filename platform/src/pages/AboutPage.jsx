@@ -8,7 +8,7 @@ function AboutPage() {
 
       <div className="about-hero about-premium">
         <img
-          src="/src/assets/icons/about.svg"
+          src="/icons/about.svg"
           alt="EdversseEDGE"
           className="about-icon"
         />

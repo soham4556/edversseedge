@@ -13,7 +13,7 @@ function ProgramsPage() {
           <article className="program-card" key={program.title}>
             <header className="program-head">
               <img
-                src="/src/assets/icons/programs.svg"
+                src="/icons/programs.svg"
                 alt=""
                 className="program-icon"
               />

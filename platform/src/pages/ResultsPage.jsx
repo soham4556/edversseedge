@@ -11,7 +11,7 @@ function ResultsPage() {
       <div className="results-wrap">
         <aside className="results-hero">
           <img
-            src="/src/assets/icons/results.svg"
+            src="/icons/results.svg"
             alt=""
             className="results-hero-icon"
           />
