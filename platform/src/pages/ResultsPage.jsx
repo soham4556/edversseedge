@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { results, stats } from "../data/siteData";
+import { results } from "../data/siteData";
 
 function ResultsPage() {
   const [filter, setFilter] = useState("all");
@@ -26,53 +26,6 @@ function ResultsPage() {
         </p>
       </div>
 
-      {/* Stats Counter Strip */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-          gap: "18px",
-          marginBottom: "40px",
-        }}
-      >
-        {stats.map((s) => (
-          <div
-            key={s.label}
-            style={{
-              background: "#ffffff",
-              border: "1px solid #e2e8f0",
-              borderRadius: "18px",
-              padding: "24px",
-              textAlign: "center",
-              boxShadow: "var(--shadow-sm)",
-            }}
-          >
-            <div
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontSize: "2.4rem",
-                fontWeight: 900,
-                color: "#1d4ed8",
-                lineHeight: 1.1,
-              }}
-            >
-              {s.value}
-            </div>
-            <div
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontWeight: 700,
-                color: "var(--brand-navy)",
-                fontSize: "0.95rem",
-                margin: "6px 0 2px",
-              }}
-            >
-              {s.label}
-            </div>
-            <small style={{ color: "#64748b" }}>{s.note}</small>
-          </div>
-        ))}
-      </div>
 
       {/* Filter Tabs */}
       <div className="filter-tabs">

@@ -22,7 +22,7 @@ function Navbar() {
           <div className="announcement-ticker">
             <span className="pulse-dot"></span>
             <span>
-              <strong>Admissions Open 2026-27:</strong> Free All-India JEE & NEET Mock Test Available Now
+              <strong></strong>
             </span>
           </div>
           <div className="announcement-links">

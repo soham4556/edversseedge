@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { contactInfo } from "../data/siteData";
+import { contactInfo, leadMentor } from "../data/siteData";
 
 function AboutPage() {
   return (
@@ -11,7 +11,7 @@ function AboutPage() {
           About <span className="text-gradient">EdversseEDGE</span>
         </h1>
         <p className="section-subtitle">
-          Founded in Pune by passionate IITians and medical educators who believe
+          Founded in Pune by passionate IITians, engineering educators, and medical mentors who believe
           every student deserves personal mentorship, not anonymous auditorium seats.
         </p>
       </div>
@@ -27,15 +27,15 @@ function AboutPage() {
           marginBottom: "48px",
         }}
       >
-        <div style={{ maxWidth: "840px", margin: "0 auto" }}>
+        <div style={{ maxWidth: "860px", margin: "0 auto" }}>
           <span className="badge badge-blue" style={{ marginBottom: "12px" }}>
             The Genesis
           </span>
           <h2 style={{ fontFamily: "var(--font-heading)", color: "var(--brand-navy)", fontSize: "1.8rem", margin: "0 0 16px" }}>
-            Why We Replaced Factory Coaching with Mentorship
+            Why We Replaced Factory Coaching with Dedicated Mentorship
           </h2>
           <p style={{ color: "#334155", lineHeight: 1.7, fontSize: "1.02rem", marginBottom: "16px" }}>
-            Over the past decade, coaching in India evolved into massive commercial
+            Over the past decade, entrance coaching across India evolved into massive commercial
             factories. Students are herded into halls with 150 to 200 peers. If a
             student falls behind by just 2 chapters, they are often forgotten and
             branded as "average."
@@ -75,6 +75,140 @@ function AboutPage() {
                 No invisible students. Every teacher knows your name and tracks your rank progression.
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ==========================================================================
+          CHIEF MENTOR SPOTLIGHT: ER. SUDHAANSHU SRIVASTAVAA
+          ========================================================================== */}
+      <div className="mentor-spotlight-card">
+        <div className="mentor-hero-grid">
+          {/* Main Info & Motivation */}
+          <div>
+            <div className="mentor-top-badge">
+              ⭐ Chief Academic Director & Master Mentor
+            </div>
+
+            <h2 className="mentor-name-title">
+              <span>{leadMentor.name}</span>
+            </h2>
+
+            <div className="mentor-designation">
+              <span>{leadMentor.role}</span>
+              <span style={{ color: "rgba(255,255,255,0.4)" }}>•</span>
+              <span style={{ color: "#fbbf24", fontSize: "0.95rem" }}>Master Educator & Strategist</span>
+            </div>
+
+            {/* Credential Pills */}
+            <div className="mentor-creds-container">
+              <div className="mentor-cred-chip highlight">
+                🎓 M.Tech in Computer Engineering
+              </div>
+              <div className="mentor-cred-chip">
+                🏛️ Bharati Vidyapeeth, Pune
+              </div>
+              <div className="mentor-cred-chip gold">
+                ⏳ In Teaching Field Since 2010 (15+ Years)
+              </div>
+              <div className="mentor-cred-chip">
+                📍 Pune Academic Pioneer
+              </div>
+            </div>
+
+            {/* Inspiring Quote Box */}
+            <div className="mentor-quote-wrapper">
+              <p className="mentor-quote-text">
+                "{leadMentor.quote}"
+              </p>
+              <div className="mentor-quote-author">
+                — Er. Sudhaanshu Srivastavaa (M.Tech, Bharati Vidyapeeth Pune)
+              </div>
+            </div>
+
+            {/* Motivation Message */}
+            <p className="mentor-motivation-para">
+              {leadMentor.motivation}
+            </p>
+
+            {/* Quick Stats Grid */}
+            <div className="mentor-stats-row">
+              <div className="mentor-stat-box">
+                <span className="mentor-stat-num">2010</span>
+                <span className="mentor-stat-lbl">Teaching Since</span>
+              </div>
+              <div className="mentor-stat-box">
+                <span className="mentor-stat-num" style={{ color: "#fbbf24" }}>15+ Yrs</span>
+                <span className="mentor-stat-lbl">Mentoring Legacy</span>
+              </div>
+              <div className="mentor-stat-box">
+                <span className="mentor-stat-num" style={{ color: "#38bdf8" }}>M.Tech</span>
+                <span className="mentor-stat-lbl">Computer Engg</span>
+              </div>
+              <div className="mentor-stat-box">
+                <span className="mentor-stat-num">1-on-1</span>
+                <span className="mentor-stat-lbl">Personal Doubts</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Profile Showcase & CTA Card */}
+          <div className="mentor-profile-card">
+            <div className="mentor-avatar-badge">
+              <div className="mentor-avatar-inner">
+                <span className="mentor-initials">SS</span>
+              </div>
+              <div className="mentor-verified-badge" title="Verified Master Mentor">✓</div>
+            </div>
+
+            <h3 className="mentor-card-name">{leadMentor.name}</h3>
+            <div className="mentor-card-deg">
+              M.Tech (Computer Engg) • Bharati Vidyapeeth
+            </div>
+
+            <div className="mentor-card-note">
+              <strong style={{ color: "#ffffff", display: "block", marginBottom: "4px" }}>
+                "No Student Is Invisible"
+              </strong>
+              Personal mentoring sessions, weekly score diagnostic audits & entrance test psychology.
+            </div>
+
+            <div className="mentor-actions">
+              <Link to="/enquire" className="btn btn-primary" style={{ width: "100%", justifyContent: "center" }}>
+                🎯 Book 1-on-1 Mentorship
+              </Link>
+              <a
+                href={contactInfo.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary"
+                style={{
+                  width: "100%",
+                  justifyContent: "center",
+                  background: "rgba(255,255,255,0.1)",
+                  color: "#ffffff",
+                  borderColor: "rgba(255,255,255,0.25)"
+                }}
+              >
+                💬 Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Core Mentorship Pillars */}
+        <div className="mentor-pillars-section">
+          <h3 className="mentor-pillars-title">
+            The 4 Core Pillars of Sir's Mentorship Philosophy
+          </h3>
+          <div className="mentor-pillars-grid">
+            {leadMentor.pillars.map((pillar, idx) => (
+              <div key={idx} className="mentor-pillar-card">
+                <span className="mentor-pillar-icon">{pillar.icon}</span>
+                <h4>{pillar.title}</h4>
+                <p>{pillar.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

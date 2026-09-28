@@ -8,7 +8,6 @@ import {
   programs,
   results,
   scholarshipTiers,
-  stats,
 } from "../data/siteData";
 
 function HomePage() {
@@ -109,15 +108,6 @@ function HomePage() {
               <Link to="/enquire" className="btn btn-accent btn-lg">
                 <span>Book Free Demo Class</span>
               </Link>
-            </div>
-
-            <div className="hero-stats-strip">
-              {stats.map((s) => (
-                <div className="hero-stat-card" key={s.label}>
-                  <span className="hero-stat-num">{s.value}</span>
-                  <span className="hero-stat-label">{s.label}</span>
-                </div>
-              ))}
             </div>
           </div>
 

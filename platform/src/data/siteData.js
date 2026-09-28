@@ -2,23 +2,16 @@ export const contactInfo = {
   phone: "+91 9766715666",
   phoneFormatted: "+91 97667 15666",
   email: "info@edversseedge.com",
-  admissionsEmail: "admissions@edversseedge.com",
-  address: "Office No. 520, 5th Floor, ONYX Bizmark, Kondhwa Khurd, Pune, Maharashtra - 411048",
-  landmark: "Near Clover Highlands & NIBM Road Junction",
+  address: "Green Park - Venkatesh Properties, Autadwadi Handewadi, Pune - 411060, Maharashtra, India",
+  landmark: "Undry - Handewadi",
   timing: "Monday to Sunday: 8:30 AM – 8:30 PM",
   whatsapp: "+919766715666",
   whatsappLink: "https://wa.me/919766715666?text=Hello%20EdversseEDGE%20Team%2C%20I%20would%20like%20to%20enquire%20about%20admissions%20and%20courses.",
-  mapsUrl: "https://maps.google.com/?q=ONYX+Bizmark+Kondhwa+Khurd+Pune",
+  mapsUrl: "https://maps.app.goo.gl/39WJtxPdj2QfeGix8",
   appDownloadUrl: "https://play.google.com/store/apps/details?id=co.jones.ytnzp&pcampaignid=web_share",
   webLoginUrl: "https://web.classplusapp.com/login?orgCode=eiyild",
 };
 
-export const stats = [
-  { value: "99.4%", label: "Highest JEE Percentile", note: "Academic Session 2025" },
-  { value: "682/720", label: "Top NEET Score", note: "Direct Classroom Student" },
-  { value: "3,500+", label: "Aspirants Mentored", note: "Across Classroom & Hybrid" },
-  { value: "1:25", label: "Mentor-to-Student Ratio", note: "Guaranteed personal focus" },
-];
 
 export const highlights = [
   {
@@ -276,7 +269,57 @@ export const results = [
   },
 ];
 
+export const leadMentor = {
+  name: "Sudhaanshu Srivastavaa",
+  fullName: "Er. Sudhaanshu Srivastavaa",
+  role: "Chief Mentor & Academic Director",
+  qualification: "M.Tech in Computer Engineering, Bharati Vidyapeeth (Pune)",
+  experience: "Teaching & Mentoring Aspirants Since 2010 (15+ Years)",
+  teachingSince: 2010,
+  almaMater: "Bharati Vidyapeeth Deemed University, Pune",
+  specialization: "Engineering Mathematics, Computer Science & Competitive Entrance Strategy",
+  tag: "Chief Mentor & Visionary Director",
+  quote: "True education is not about forcing students into high-pressure auditoriums; it's about igniting genuine intellectual curiosity. When concepts are clear and doubts are resolved with care, competitive success is not just a dream—it is an inevitability.",
+  motivation: "Since 2010, my life's mission has been to mentor young minds to think analytically rather than memorize blindly. Competitive exams like JEE, NEET, and MHT-CET don't demand innate genius; they demand unwavering consistency, conceptual clarity, and a mentor who never gives up on you. At EdversseEDGE, we ensure no student is just an anonymous roll number—every student receives personal guidance, strategic roadmap, and the emotional stamina to achieve top ranks.",
+  highlights: [
+    { label: "Academic Degree", value: "M.Tech in Computer Engg", sub: "Bharati Vidyapeeth, Pune" },
+    { label: "Teaching Journey", value: "Active Since 2010", sub: "15+ Years Proven Track Record" },
+    { label: "Core Methodology", value: "Concept-First Logic", sub: "Zero Rote Learning Approach" },
+    { label: "Student Focus", value: "1-on-1 Guidance", sub: "Personal Doubts & Exam Strategy" },
+  ],
+  pillars: [
+    {
+      icon: "💡",
+      title: "Algorithmic & Analytical Depth",
+      desc: "Rooted in his Computer Engineering background from Bharati Vidyapeeth, Pune, he breaks complex multi-variable problems into simple, structured algorithmic steps.",
+    },
+    {
+      icon: "⏳",
+      title: "15+ Years of Exam Mastery",
+      desc: "Mentoring aspirants through over a decade and a half of evolving JEE, NEET, and Board patterns with predictive insight and time-tested strategies.",
+    },
+    {
+      icon: "🎯",
+      title: "1-on-1 Doubts & Zero Backlog",
+      desc: "Passionate advocate that no doubt is too small. Direct access to mentorship ensures students maintain high motivation and rapid learning velocity.",
+    },
+    {
+      icon: "🧠",
+      title: "Mindset & Exam Temperament",
+      desc: "Transforming exam anxiety into sharp focus and mental resilience, building the stamina required for 3-hour high-stakes national entrance tests.",
+    },
+  ],
+};
+
 export const faculty = [
+  {
+    name: "Sudhaanshu Srivastavaa",
+    role: "Chief Mentor & Academic Director",
+    qualification: "M.Tech (Computer Engineering) — Bharati Vidyapeeth, Pune",
+    experience: "Teaching Since 2010 (15+ Years)",
+    bio: "Pioneering concept-driven entrance coaching with an engineering mindset. Guides students with structured problem solving, individual doubt elimination, and holistic exam strategy.",
+    tag: "Chief Academic Mentor",
+  },
   {
     name: "Dr. R. K. Sharma",
     role: "Head of Physics & Academic Director",

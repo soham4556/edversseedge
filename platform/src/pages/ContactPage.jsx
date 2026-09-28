@@ -83,10 +83,6 @@ function ContactPage() {
             <div className="contact-details">
               <h4>Official Email</h4>
               <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
-              <br />
-              <a href={`mailto:${contactInfo.admissionsEmail}`}>
-                {contactInfo.admissionsEmail}
-              </a>
             </div>
           </div>
 
