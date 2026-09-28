@@ -3,17 +3,34 @@ import { contactInfo } from "../data/siteData";
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [whatsappRedirectUrl, setWhatsappRedirectUrl] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
-    subject: "Admission Inquiry",
+    subject: "IIT-JEE Batch Admission Inquiry",
     message: "",
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const cleanNumber = (contactInfo.whatsapp || "919766715666").replace(/[^0-9]/g, "");
+    const message = `📩 *New Contact Query - EdversseEDGE*
+
+👤 *Name:* ${formData.name}
+📱 *Phone:* ${formData.phone}
+✉️ *Email:* ${formData.email || "Not Provided"}
+📌 *Subject / Query:* ${formData.subject}
+${formData.message ? `💬 *Message:* ${formData.message}\n` : ""}
+📍 *Campus:* Kondhwa Center, Pune`;
+
+    const url = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`;
+    setWhatsappRedirectUrl(url);
     setSent(true);
+
+    // Direct immediate redirect to WhatsApp
+    window.location.href = url;
   };
 
   return (
@@ -108,13 +125,22 @@ function ContactPage() {
           </p>
 
           {sent ? (
-            <div className="toast-success">
+            <div className="toast-success" style={{ padding: "24px", borderRadius: "16px" }}>
               <div>
-                <strong>Message Received Successfully! 🎉</strong>
-                <p style={{ margin: "4px 0 0", fontSize: "0.88rem" }}>
-                  Thank you, {formData.name}. Our admissions counselor will call
-                  you back on {formData.phone} shortly.
+                <strong style={{ fontSize: "1.1rem" }}>Inquiry Submitted! Redirecting to WhatsApp... 🎉</strong>
+                <p style={{ margin: "8px 0 16px", fontSize: "0.92rem", lineHeight: 1.6 }}>
+                  Thank you, <strong>{formData.name}</strong>. Your query is being sent directly to Sir's WhatsApp ({contactInfo.phoneFormatted}).
                 </p>
+                <a
+                  href={whatsappRedirectUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-sm btn-white"
+                  style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}
+                >
+                  <span>💬 Open WhatsApp Now</span>
+                  <span>→</span>
+                </a>
               </div>
             </div>
           ) : (

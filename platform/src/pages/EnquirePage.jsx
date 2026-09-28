@@ -4,6 +4,7 @@ import { contactInfo, courses } from "../data/siteData";
 
 function EnquirePage() {
   const [submitted, setSubmitted] = useState(false);
+  const [whatsappRedirectUrl, setWhatsappRedirectUrl] = useState("");
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -17,7 +18,26 @@ function EnquirePage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const cleanNumber = (contactInfo.whatsapp || "919766715666").replace(/[^0-9]/g, "");
+    const message = `🎓 *New Free Demo & Admission Enquiry - EdversseEDGE*
+
+👤 *Name:* ${form.name}
+📱 *Phone:* ${form.phone}
+✉️ *Email:* ${form.email || "Not Provided"}
+👥 *Role:* ${form.parentOrStudent}
+🎯 *Target Course / Exam:* ${form.targetExam}
+📚 *Current Class:* ${form.currentStandard}
+🏫 *Preferred Learning Mode:* ${form.preferredMode}
+${form.notes ? `📝 *Specific Query / Goals:* ${form.notes}\n` : ""}
+📍 *Campus:* Kondhwa Center, Pune`;
+
+    const url = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(message)}`;
+    setWhatsappRedirectUrl(url);
     setSubmitted(true);
+
+    // Direct immediate redirect to WhatsApp
+    window.location.href = url;
   };
 
   return (
@@ -88,12 +108,12 @@ function EnquirePage() {
                 Return to Home
               </Link>
               <a
-                href={contactInfo.whatsappLink}
+                href={whatsappRedirectUrl || contactInfo.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-accent"
               >
-                Chat on WhatsApp Now
+                💬 Open in WhatsApp Now →
               </a>
             </div>
           </div>
