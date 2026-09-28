@@ -2001,6 +2001,21 @@
   color: #cbd5e1;
 }
 
+.footer-developed-by a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.82rem;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.footer-developed-by a:hover {
+  color: #38bdf8;
+  text-decoration: underline;
+}
+
 /* --- Toast / Alert Confirmation --- */
 .toast-success {
   background: #065f46;

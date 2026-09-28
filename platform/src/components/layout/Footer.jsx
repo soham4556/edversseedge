@@ -135,6 +135,15 @@ function Footer() {
           © {new Date().getFullYear()} EdversseEDGE Education Pvt. Ltd. All
           Rights Reserved.
         </div>
+        <div className="footer-developed-by">
+          <a
+            href="https://www.payivvatechnologies.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            developed by Payivva Technologies
+          </a>
+        </div>
         <div className="footer-bottom-links">
           <Link to="/privacy-policy">Privacy Policy</Link>
           <Link to="/terms-of-admission">Terms of Admission</Link>

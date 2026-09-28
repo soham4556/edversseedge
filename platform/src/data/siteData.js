@@ -4,7 +4,7 @@ export const contactInfo = {
   email: "info@edversseedge.com",
   address: "Green Park - Venkatesh Properties, Autadwadi Handewadi, Pune - 411060, Maharashtra, India",
   landmark: "Undry - Handewadi",
-  timing: "Monday to Sunday: 8:30 AM – 8:30 PM",
+  timing: "Monday to Sunday: 8:30 AM – 04:00PM",
   whatsapp: "+919766715666",
   whatsappLink: "https://wa.me/919766715666?text=Hello%20EdversseEDGE%20Team%2C%20I%20would%20like%20to%20enquire%20about%20admissions%20and%20courses.",
   mapsUrl: "https://maps.app.goo.gl/39WJtxPdj2QfeGix8",
