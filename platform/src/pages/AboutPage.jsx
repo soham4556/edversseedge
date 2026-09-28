@@ -1,99 +1,190 @@
+import { Link } from "react-router-dom";
+import { contactInfo } from "../data/siteData";
+
 function AboutPage() {
   return (
-    <section className="section page-container">
-      <div className="section-heading">
-        <h2>About EdversseEDGE</h2>
-        <p>Empowering students through smart strategy and strong execution</p>
+    <div className="section page-container">
+      {/* Header */}
+      <div className="section-heading text-center">
+        <span className="section-tag">Our Story & Mission</span>
+        <h1 className="section-title">
+          About <span className="text-gradient">EdversseEDGE</span>
+        </h1>
+        <p className="section-subtitle">
+          Founded in Pune by passionate IITians and medical educators who believe
+          every student deserves personal mentorship, not anonymous auditorium seats.
+        </p>
       </div>
 
-      <div className="about-hero about-premium">
-        <img
-          src="/icons/about.svg"
-          alt="EdversseEDGE"
-          className="about-icon"
-        />
-        <div className="about-content">
-          <h3>We make preparation measurable and meaningful</h3>
-          <p>
-            EdversseEDGE blends concept-first teaching, diagnostic testing, and
-            mentor-led recovery plans to help students achieve top performance
-            in boards and national entrance exams.
+      {/* Story Narrative Card */}
+      <div
+        style={{
+          background: "#ffffff",
+          border: "1px solid #e2e8f0",
+          borderRadius: "24px",
+          padding: "clamp(24px, 4vw, 44px)",
+          boxShadow: "var(--shadow-sm)",
+          marginBottom: "48px",
+        }}
+      >
+        <div style={{ maxWidth: "840px", margin: "0 auto" }}>
+          <span className="badge badge-blue" style={{ marginBottom: "12px" }}>
+            The Genesis
+          </span>
+          <h2 style={{ fontFamily: "var(--font-heading)", color: "var(--brand-navy)", fontSize: "1.8rem", margin: "0 0 16px" }}>
+            Why We Replaced Factory Coaching with Mentorship
+          </h2>
+          <p style={{ color: "#334155", lineHeight: 1.7, fontSize: "1.02rem", marginBottom: "16px" }}>
+            Over the past decade, coaching in India evolved into massive commercial
+            factories. Students are herded into halls with 150 to 200 peers. If a
+            student falls behind by just 2 chapters, they are often forgotten and
+            branded as "average."
+          </p>
+          <p style={{ color: "#334155", lineHeight: 1.7, fontSize: "1.02rem", marginBottom: "24px" }}>
+            <strong>EdversseEDGE was founded with a singular conviction:</strong>{" "}
+            Students don’t fail because they lack intelligence; they fail because
+            their personal doubts remain unresolved. By capping batches at 28
+            students and assigning every aspirant a dedicated personal mentor, we
+            provide the exact strategic guidance that turns hard work into top ranks.
           </p>
 
-          <div className="about-mission">
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+              gap: "16px",
+              paddingTop: "20px",
+              borderTop: "1px solid #e2e8f0",
+            }}
+          >
             <div>
-              <strong>Mission</strong>
-              <p className="muted">
-                Deliver results through focused mentoring.
+              <strong style={{ color: "#2563eb", fontSize: "1.1rem" }}>Our Mission</strong>
+              <p style={{ margin: "4px 0 0", color: "#64748b", fontSize: "0.88rem" }}>
+                To deliver measurable score leaps through concept-first teaching and weekly recovery clinics.
               </p>
             </div>
             <div>
-              <strong>Vision</strong>
-              <p className="muted">
-                Create confident learners who lead change.
+              <strong style={{ color: "#10b981", fontSize: "1.1rem" }}>Our Vision</strong>
+              <p style={{ margin: "4px 0 0", color: "#64748b", fontSize: "0.88rem" }}>
+                To make Pune a benchmark for stress-free, high-yielding entrance exam excellence.
               </p>
             </div>
-          </div>
-
-          <div className="pillars-grid">
-            <article className="pillar-card">
-              <h4>Concept-First</h4>
-              <p className="muted">
-                Deep conceptual clarity before application.
+            <div>
+              <strong style={{ color: "#f59e0b", fontSize: "1.1rem" }}>Our Promise</strong>
+              <p style={{ margin: "4px 0 0", color: "#64748b", fontSize: "0.88rem" }}>
+                No invisible students. Every teacher knows your name and tracks your rank progression.
               </p>
-            </article>
-
-            <article className="pillar-card">
-              <h4>Assessment-Led</h4>
-              <p className="muted">
-                Regular tests with personalised analytics.
-              </p>
-            </article>
-
-            <article className="pillar-card">
-              <h4>Mentor Support</h4>
-              <p className="muted">One-on-one recovery and doubt clinics.</p>
-            </article>
-          </div>
-
-          <div className="about-cta">
-            <a className="btn btn-primary" href="/enquire">
-              Apply Now
-            </a>
-            <a className="btn btn-ghost" href="/contact">
-              Visit Center
-            </a>
+            </div>
           </div>
         </div>
       </div>
 
-      <section className="section" aria-label="Our team">
-        <div className="section-heading">
-          <h3>Meet Our Mentors</h3>
-          <p className="muted">Experienced faculty guiding every step</p>
+
+      {/* Campus Infrastructure */}
+      <div
+        style={{
+          background: "linear-gradient(145deg, #0b1f3a 0%, #16325c 100%)",
+          borderRadius: "28px",
+          padding: "44px 36px",
+          color: "#ffffff",
+          boxShadow: "0 20px 40px rgba(11, 31, 58, 0.25)",
+          marginBottom: "48px",
+        }}
+      >
+        <div style={{ textAlign: "center", marginBottom: "32px" }}>
+          <span className="badge badge-gold" style={{ marginBottom: "10px" }}>
+            ⭐ Pune Learning Center
+          </span>
+          <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "1.8rem", margin: 0 }}>
+            State-of-the-Art Infrastructure in Kondhwa
+          </h2>
+          <p style={{ color: "#cbd5e1", marginTop: "8px" }}>
+            Designed to foster focused concentration, collaboration, and high academic stamina.
+          </p>
         </div>
 
-        <div className="team-grid">
-          <article className="detail-card">
-            <h4>Dr. R. Sharma</h4>
-            <p className="muted">Physics Mentor • 12+ years</p>
-            <p>Specialises in problem solving and concept reinforcement.</p>
-          </article>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gap: "20px",
+          }}
+        >
+          <div style={{ background: "rgba(255,255,255,0.08)", padding: "20px", borderRadius: "16px", border: "1px solid rgba(255,255,255,0.12)" }}>
+            <span style={{ fontSize: "1.8rem", display: "block", marginBottom: "8px" }}>🖥️</span>
+            <h4 style={{ margin: "0 0 6px" }}>Smart Tech Classrooms</h4>
+            <p style={{ margin: 0, fontSize: "0.86rem", color: "#cbd5e1", lineHeight: 1.5 }}>
+              Acoustically treated, air-conditioned rooms equipped with digital interactive boards for 3D physics and biology visualizations.
+            </p>
+          </div>
 
-          <article className="detail-card">
-            <h4>Ms. S. Desai</h4>
-            <p className="muted">Chemistry Mentor • 10+ years</p>
-            <p>Focus on application and exam strategy for NEET aspirants.</p>
-          </article>
+          <div style={{ background: "rgba(255,255,255,0.08)", padding: "20px", borderRadius: "16px", border: "1px solid rgba(255,255,255,0.12)" }}>
+            <span style={{ fontSize: "1.8rem", display: "block", marginBottom: "8px" }}>💬</span>
+            <h4 style={{ margin: "0 0 6px" }}>1-on-1 Doubt Cabins</h4>
+            <p style={{ margin: 0, fontSize: "0.86rem", color: "#cbd5e1", lineHeight: 1.5 }}>
+              Dedicated private booths where students sit directly with teachers to dissect tricky numerical problems.
+            </p>
+          </div>
 
-          <article className="detail-card">
-            <h4>Mr. A. Kulkarni</h4>
-            <p className="muted">Mathematics Mentor • 15+ years</p>
-            <p>Known for clarity in calculus and advanced problem sets.</p>
-          </article>
+          <div style={{ background: "rgba(255,255,255,0.08)", padding: "20px", borderRadius: "16px", border: "1px solid rgba(255,255,255,0.12)" }}>
+            <span style={{ fontSize: "1.8rem", display: "block", marginBottom: "8px" }}>⌨️</span>
+            <h4 style={{ margin: "0 0 6px" }}>Computer Testing Lab</h4>
+            <p style={{ margin: 0, fontSize: "0.86rem", color: "#cbd5e1", lineHeight: 1.5 }}>
+              CBT exam terminals simulating exact NTA JEE Main and Advanced interfaces with countdown timers.
+            </p>
+          </div>
+
+          <div style={{ background: "rgba(255,255,255,0.08)", padding: "20px", borderRadius: "16px", border: "1px solid rgba(255,255,255,0.12)" }}>
+            <span style={{ fontSize: "1.8rem", display: "block", marginBottom: "8px" }}>📖</span>
+            <h4 style={{ margin: "0 0 6px" }}>Reference Library</h4>
+            <p style={{ margin: 0, fontSize: "0.86rem", color: "#cbd5e1", lineHeight: 1.5 }}>
+              Quiet, distraction-free self-study reading room stocked with 15+ years of entrance question archives and reference textbooks.
+            </p>
+          </div>
         </div>
-      </section>
-    </section>
+      </div>
+
+      {/* Center Location & Visit CTA */}
+      <div
+        style={{
+          background: "#ffffff",
+          border: "1px solid #e2e8f0",
+          borderRadius: "24px",
+          padding: "36px",
+          boxShadow: "var(--shadow-sm)",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          flexWrap: "wrap",
+          gap: "24px",
+        }}
+      >
+        <div>
+          <span className="badge badge-emerald" style={{ marginBottom: "8px" }}>
+            📍 Visit Us in Person
+          </span>
+          <h3 style={{ margin: "4px 0 6px", color: "var(--brand-navy)" }}>
+            Experience Our Classrooms in Kondhwa, Pune
+          </h3>
+          <p style={{ margin: 0, color: "#64748b" }}>
+            {contactInfo.address} ({contactInfo.landmark})
+          </p>
+        </div>
+        <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+          <a
+            href={contactInfo.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-secondary"
+          >
+            Open in Google Maps ↗
+          </a>
+          <Link to="/enquire" className="btn btn-primary">
+            Schedule Center Visit
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 }
 

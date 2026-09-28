@@ -1,4 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
-  <path d="M32 10c6 0 12 4 12 10v12c0 6-6 10-12 10s-12-4-12-10V20c0-6 6-10 12-10z" fill="#fff9eb" stroke="#f59e0b" stroke-width="2"/>
-  <path d="M22 44v6c0 6 10 6 12 6s12 0 12-6v-6" stroke="#f59e0b" stroke-width="2" fill="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <defs>
+    <linearGradient id="schBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="100%" stop-color="#fef3c7"/>
+    </linearGradient>
+    <linearGradient id="schRibbon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="schGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="35%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <filter id="schGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#b45309" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base Container -->
+  <rect x="6" y="6" width="108" height="108" rx="28" fill="url(#schBg)" stroke="#fde68a" stroke-width="1.5"/>
+
+  <!-- Hanging Satin Ribbons -->
+  <polygon points="46,24 60,46 50,82 34,88 40,54" fill="url(#schRibbon)"/>
+  <polygon points="74,24 60,46 70,82 86,88 80,54" fill="#2563eb"/>
+
+  <!-- Medal Outer Ring -->
+  <g filter="url(#schGlow)">
+    <circle cx="60" cy="56" r="28" fill="url(#schGold)"/>
+    <circle cx="60" cy="56" r="23" fill="#ffffff" fill-opacity="0.15" stroke="#fef08a" stroke-width="1.5"/>
+    <circle cx="60" cy="56" r="20" fill="url(#schGold)"/>
+  </g>
+
+  <!-- Center Star of Excellence -->
+  <polygon points="60,42 63.5,50 72,51 65.5,57 67.5,65 60,61 52.5,65 54.5,57 48,51 56.5,50" fill="#ffffff" fill-opacity="0.95"/>
+
+  <!-- Top Ribbon Loop Pin -->
+  <rect x="52" y="18" width="16" height="8" rx="3" fill="url(#schGold)" stroke="#b45309" stroke-width="1"/>
 </svg>

@@ -11,6 +11,9 @@ import ResultsPage from "./pages/ResultsPage";
 import ScholarshipsPage from "./pages/ScholarshipsPage";
 import TestSeriesPage from "./pages/TestSeriesPage";
 import DownloadPage from "./pages/DownloadPage";
+import FreeMockTestPage from "./pages/FreeMockTestPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import TermsOfAdmissionPage from "./pages/TermsOfAdmissionPage";
 import "./styles/site.css";
 
 function App() {
@@ -20,6 +23,7 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<Navigate to="/" replace />} />
+          <Route path="/free-mock-test" element={<FreeMockTestPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/courses" element={<CoursesPage />} />
           <Route path="/programs" element={<ProgramsPage />} />
@@ -29,6 +33,9 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/enquire" element={<EnquirePage />} />
           <Route path="/download" element={<DownloadPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms-of-admission" element={<TermsOfAdmissionPage />} />
+          <Route path="/terms" element={<Navigate to="/terms-of-admission" replace />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

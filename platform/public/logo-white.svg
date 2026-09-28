@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 90" width="380" height="90" fill="none">
+  <defs>
+    <linearGradient id="wlogoEdgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="wlogoGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="40%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="wlogoCyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ICON CREST EMBLEM -->
+  <g>
+    <!-- Shield Outline with Glowing Fill -->
+    <path d="M45 12 L72 23 C72 52 45 74 45 74 C45 74 18 52 18 23 Z" fill="#0f2b52" stroke="url(#wlogoGoldGrad)" stroke-width="1.5"/>
+
+    <!-- Orbital STEM Path -->
+    <ellipse cx="45" cy="42" rx="20" ry="7" stroke="url(#wlogoCyanGrad)" stroke-width="1.5" stroke-dasharray="2 1" transform="rotate(-30 45 42)"/>
+    
+    <!-- Dynamic 'E' Apex Wing (The EDGE) -->
+    <path d="M33 34 L56 34 L52 40 L38 40 L37 44 L50 44 L46 50 L36 50 L34 56 L55 56 L51 62 L28 62 Z" fill="url(#wlogoGoldGrad)"/>
+    
+    <!-- Golden Apex Spark -->
+    <polygon points="58,22 60,28 66,28.5 61,32 63,38 58,35 53,38 55,32 50,28.5 56,28" fill="url(#wlogoGoldGrad)"/>
+  </g>
+
+  <!-- TYPOGRAPHY -->
+  <g>
+    <!-- Brand Wordmark: "Edversse" in pure crisp white -->
+    <text x="96" y="50" font-family="'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif" font-size="34" font-weight="900" fill="#ffffff" letter-spacing="-0.03em">
+      Edversse
+    </text>
+
+    <!-- Brand Wordmark: "EDGE" in glowing blue -->
+    <text x="246" y="50" font-family="'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif" font-size="34" font-weight="900" fill="url(#wlogoEdgeGrad)" letter-spacing="-0.02em">
+      EDGE
+    </text>
+
+    <!-- Golden Spark -->
+    <polygon points="340,32 342,37 347,37.5 343,40.5 344.5,45 340,42.5 335.5,45 337,40.5 333,37.5 338,37" fill="url(#wlogoGoldGrad)"/>
+
+    <!-- Subtitle / Tagline -->
+    <text x="98" y="70" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" font-weight="700" fill="#93c5fd" letter-spacing="0.16em">
+      IIT-JEE • NEET • BOARDS EXCELLENCE
+    </text>
+
+    <!-- Pune Badge -->
+    <rect x="314" y="60" width="46" height="14" rx="4" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
+    <text x="321" y="70" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="8" font-weight="800" fill="#fde047" letter-spacing="0.04em">
+      PUNE
+    </text>
+  </g>
+</svg>

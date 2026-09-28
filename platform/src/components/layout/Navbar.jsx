@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { contactInfo } from "../../data/siteData";
 
 const navItems = [
   { label: "Home", to: "/" },
@@ -7,8 +8,7 @@ const navItems = [
   { label: "Courses", to: "/courses" },
   { label: "Programs", to: "/programs" },
   { label: "Test Series", to: "/test-series" },
-  { label: "Results", to: "/results" },
-  { label: "Scholarships", to: "/scholarships" },
+  { label: "Free Mock Test", to: "/free-mock-test" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -16,49 +16,107 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="navbar-shell">
-      <nav className="navbar page-container" aria-label="Main navigation">
-        <NavLink to="/" className="brand-link" onClick={() => setIsOpen(false)}>
-          <img src="/logo.png" alt="EdversseEDGE" className="brand-logo" />
-        </NavLink>
-
-        <button
-          type="button"
-          className="menu-toggle"
-          onClick={() => setIsOpen((prev) => !prev)}
-          aria-expanded={isOpen}
-          aria-controls="primary-nav"
-        >
-          Menu
-        </button>
-
-        <div id="primary-nav" className={`nav-links ${isOpen ? "open" : ""}`}>
-          {navItems.map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              className={({ isActive }) =>
-                isActive ? "nav-link active" : "nav-link"
-              }
-              onClick={() => setIsOpen(false)}
+    <>
+      <div className="announcement-bar">
+        <div className="page-container announcement-content">
+          <div className="announcement-ticker">
+            <span className="pulse-dot"></span>
+            <span>
+              <strong>Admissions Open 2026-27:</strong> Free All-India JEE & NEET Mock Test Available Now
+            </span>
+          </div>
+          <div className="announcement-links">
+            <a
+              href={`tel:${contactInfo.phone.replace(/\s+/g, "")}`}
+              className="announcement-link"
             >
-              {item.label}
-            </NavLink>
-          ))}
-
-          <a
-            href="https://web.classplusapp.com/login?orgCode=eiyild"
-            className="nav-cta"
-            onClick={() => setIsOpen(false)}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Login
-          </a>
+              📞 <span>{contactInfo.phoneFormatted}</span>
+            </a>
+            <a
+              href={contactInfo.appDownloadUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="announcement-link"
+            >
+              📱 <span>Get Android App</span>
+            </a>
+          </div>
         </div>
-      </nav>
-    </header>
+      </div>
+
+      <header className="navbar-shell">
+        <div className="page-container navbar">
+          <Link to="/" className="brand-link" onClick={() => setIsOpen(false)}>
+            <img src="/logo.png" alt="EdversseEDGE" className="brand-logo" />
+          </Link>
+
+          <button
+            type="button"
+            className="menu-toggle"
+            onClick={() => setIsOpen((prev) => !prev)}
+            aria-expanded={isOpen}
+            aria-label="Toggle navigation menu"
+          >
+            {isOpen ? "✕" : "☰"}
+          </button>
+
+          <nav
+            id="primary-nav"
+            className={`nav-links ${isOpen ? "open" : ""}`}
+            aria-label="Primary Navigation"
+          >
+            {navItems.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </NavLink>
+            ))}
+
+            <div className="nav-mobile-actions" style={{ display: isOpen ? "flex" : "none" }}>
+              <a
+                href={contactInfo.webLoginUrl}
+                className="nav-login-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+              >
+                Student Login
+              </a>
+              <Link
+                to="/enquire"
+                className="nav-cta-btn"
+                onClick={() => setIsOpen(false)}
+              >
+                Book Free Demo
+              </Link>
+            </div>
+          </nav>
+
+          <div className="nav-actions">
+            <a
+              href={contactInfo.webLoginUrl}
+              className="nav-login-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Student Login
+            </a>
+            <Link to="/enquire" className="nav-cta-btn">
+              <span>Book Free Demo</span>
+              <span>→</span>
+            </Link>
+          </div>
+        </div>
+      </header>
+    </>
   );
 }
 
 export default Navbar;
+

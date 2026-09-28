@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 90" width="380" height="90" fill="none">
+  <defs>
+    <!-- Brand Gradients -->
+    <linearGradient id="logoShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1f3a"/>
+      <stop offset="60%" stop-color="#16325c"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="logoEdgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="logoGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="40%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="logoCyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <filter id="logoGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#1e3a8a" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- ICON CREST EMBLEM (Left: X=10 to 80, Y=10 to 80) -->
+  <g filter="url(#logoGlow)">
+    <!-- Shield Outline with Rounded Geometry -->
+    <path d="M45 12 L72 23 C72 52 45 74 45 74 C45 74 18 52 18 23 Z" fill="url(#logoShieldGrad)"/>
+    
+    <!-- Outer Shield Border Accent -->
+    <path d="M45 15 L69 25 C69 50 45 70 45 70 C45 70 21 50 21 25 Z" fill="none" stroke="url(#logoGoldGrad)" stroke-width="1.2" opacity="0.6"/>
+
+    <!-- Orbital STEM Path -->
+    <ellipse cx="45" cy="42" rx="20" ry="7" stroke="url(#logoCyanGrad)" stroke-width="1.5" stroke-dasharray="2 1" transform="rotate(-30 45 42)"/>
+    
+    <!-- Dynamic 'E' Apex Wing (The EDGE) -->
+    <path d="M33 34 L56 34 L52 40 L38 40 L37 44 L50 44 L46 50 L36 50 L34 56 L55 56 L51 62 L28 62 Z" fill="url(#logoGoldGrad)"/>
+    
+    <!-- Golden Apex Spark -->
+    <polygon points="58,22 60,28 66,28.5 61,32 63,38 58,35 53,38 55,32 50,28.5 56,28" fill="url(#logoGoldGrad)"/>
+  </g>
+
+  <!-- TYPOGRAPHY (Right: X=95 onwards) -->
+  <g>
+    <!-- Brand Wordmark: "Edversse" -->
+    <text x="96" y="50" font-family="'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif" font-size="34" font-weight="900" fill="#0b1f3a" letter-spacing="-0.03em">
+      Edversse
+    </text>
+
+    <!-- Brand Wordmark: "EDGE" -->
+    <text x="246" y="50" font-family="'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif" font-size="34" font-weight="900" fill="url(#logoEdgeGrad)" letter-spacing="-0.02em">
+      EDGE
+    </text>
+
+    <!-- Golden Spark on the EDGE -->
+    <polygon points="340,32 342,37 347,37.5 343,40.5 344.5,45 340,42.5 335.5,45 337,40.5 333,37.5 338,37" fill="url(#logoGoldGrad)"/>
+
+    <!-- Subtitle / Tagline -->
+    <text x="98" y="70" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="10.5" font-weight="800" fill="#2563eb" letter-spacing="0.16em">
+      IIT-JEE • NEET • BOARDS EXCELLENCE
+    </text>
+
+    <!-- Pune Center Micro-Badge -->
+    <rect x="314" y="60" width="46" height="14" rx="4" fill="#eff6ff" stroke="#bfdbfe" stroke-width="0.8"/>
+    <text x="321" y="70" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="8" font-weight="800" fill="#1d4ed8" letter-spacing="0.04em">
+      PUNE
+    </text>
+  </g>
+</svg>

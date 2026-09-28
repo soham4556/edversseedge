@@ -1,6 +1,51 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
-  <rect x="12" y="12" width="40" height="40" rx="8" fill="#ecfeff" stroke="#06b6d4" stroke-width="2"/>
-  <path d="M20 28h24" stroke="#06b6d4" stroke-width="1.6" stroke-linecap="round"/>
-  <path d="M20 36h16" stroke="#06b6d4" stroke-width="1.6" stroke-linecap="round"/>
-  <circle cx="44" cy="20" r="3" fill="#06b6d4"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <defs>
+    <linearGradient id="neetBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5"/>
+      <stop offset="100%" stop-color="#d1fae5"/>
+    </linearGradient>
+    <linearGradient id="neetShield" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#065f46"/>
+      <stop offset="50%" stop-color="#047857"/>
+      <stop offset="100%" stop-color="#064e3b"/>
+    </linearGradient>
+    <linearGradient id="neetEmerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6ee7b7"/>
+      <stop offset="50%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="neetCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a7f3d0"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+    <filter id="neetGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#065f46" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base Container -->
+  <rect x="6" y="6" width="108" height="108" rx="28" fill="url(#neetBg)" stroke="#a7f3d0" stroke-width="1.5"/>
+
+  <!-- Main Medical Crest Shield -->
+  <g filter="url(#neetGlow)">
+    <path d="M60 20 L88 32 C88 64 60 88 60 88 C60 88 32 64 32 32 Z" fill="url(#neetShield)"/>
+  </g>
+
+  <!-- Medical Cross Glow Element -->
+  <rect x="54" y="34" width="12" height="32" rx="4" fill="#ffffff" fill-opacity="0.95"/>
+  <rect x="44" y="44" width="32" height="12" rx="4" fill="#ffffff" fill-opacity="0.95"/>
+
+  <!-- Asclepius Caduceus Rod -->
+  <line x1="60" y1="26" x2="60" y2="82" stroke="url(#neetCyan)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="60" cy="26" r="4.5" fill="#fef08a"/>
+
+  <!-- DNA Double Helix Entwined Curves -->
+  <path d="M48 38 Q60 48 72 38" stroke="url(#neetCyan)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M72 50 Q60 40 48 50" stroke="url(#neetCyan)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M48 62 Q60 72 72 62" stroke="url(#neetCyan)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M72 74 Q60 64 48 74" stroke="url(#neetCyan)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Glowing Caduceus Wings at Crest Top -->
+  <path d="M60 30 C52 24 40 25 38 33 C45 34 54 36 60 38" fill="url(#neetEmerald)"/>
+  <path d="M60 30 C68 24 80 25 82 33 C75 34 66 36 60 38" fill="url(#neetEmerald)"/>
 </svg>
