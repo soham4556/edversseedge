@@ -132,7 +132,7 @@ function Footer() {
 
       <div className="page-container footer-bottom">
         <div>
-          © {new Date().getFullYear()} EdversseEDGE Education Pvt. Ltd. All
+          © {new Date().getFullYear()} EdversseEDGE Education All
           Rights Reserved.
         </div>
         <div className="footer-developed-by">
