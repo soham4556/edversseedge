@@ -93,33 +93,69 @@ function GroupTuitionPage() {
               <h3>Maths &amp; Science Board Accelerator</h3>
               <p>NCERT line-by-line concept mastery, exemplar problems, and past 10-year board paper practice.</p>
               <div className="batch-meta">
-                <span>Batch Size: Max 5</span>
-                <span>Days: 3 Days / Week</span>
+                <div className="batch-meta-row">
+                  <span className="meta-label">👥 Batch Limit:</span>
+                  <span className="meta-val">Max 5 Students</span>
+                </div>
+                <div className="batch-meta-row">
+                  <span className="meta-label">📅 Schedule:</span>
+                  <span className="meta-val">3 Days / Week</span>
+                </div>
+                <div className="batch-meta-row">
+                  <span className="meta-label">📍 Format:</span>
+                  <span className="meta-val">Focused Micro-Group</span>
+                </div>
               </div>
-              <Link to="/enquire" className="btn btn-outline-primary btn-block">Enquire for Batch →</Link>
+              <Link to="/enquire" className="btn btn-outline-navy btn-block">
+                Enquire for Batch →
+              </Link>
             </div>
 
             <div className="batch-card featured-batch">
-              <div className="batch-star">⭐ Popular</div>
-              <span className="batch-tag">Class 11 &amp; 12 Science</span>
+              <div className="batch-star">⭐ Popular Batch</div>
+              <span className="batch-tag batch-tag-gold">Class 11 &amp; 12 Science</span>
               <h3>Physics &amp; Chemistry Mastery</h3>
               <p>Comprehensive theory with numerical speed drills for CBSE Boards + JEE/NEET foundational bridge.</p>
               <div className="batch-meta">
-                <span>Batch Size: Max 6</span>
-                <span>Days: Alternate Days + Weekend Tests</span>
+                <div className="batch-meta-row">
+                  <span className="meta-label">👥 Batch Limit:</span>
+                  <span className="meta-val">Strictly Max 6</span>
+                </div>
+                <div className="batch-meta-row">
+                  <span className="meta-label">📅 Schedule:</span>
+                  <span className="meta-val">Alternate Days + Tests</span>
+                </div>
+                <div className="batch-meta-row">
+                  <span className="meta-label">📍 Format:</span>
+                  <span className="meta-val">Board + Entrance Bridge</span>
+                </div>
               </div>
-              <Link to="/enquire" className="btn btn-primary btn-block">Book Free Demo →</Link>
+              <Link to="/enquire" className="btn btn-primary btn-block">
+                Book Free Demo →
+              </Link>
             </div>
 
             <div className="batch-card">
               <span className="batch-tag">Competitive Entrance</span>
               <h3>JEE / NEET Advanced Problem Solving</h3>
-              <p>Multi-concept numerical solving in Physics & Chemistry with time-bound speed tests.</p>
+              <p>Multi-concept numerical solving in Physics &amp; Chemistry with time-bound speed tests.</p>
               <div className="batch-meta">
-                <span>Batch Size: Max 4</span>
-                <span>Days: Structured Weekend Intensive</span>
+                <div className="batch-meta-row">
+                  <span className="meta-label">👥 Batch Limit:</span>
+                  <span className="meta-val">Strictly Max 4</span>
+                </div>
+                <div className="batch-meta-row">
+                  <span className="meta-label">📅 Schedule:</span>
+                  <span className="meta-val">Weekend Intensive</span>
+                </div>
+                <div className="batch-meta-row">
+                  <span className="meta-label">📍 Format:</span>
+                  <span className="meta-val">Advanced Problem Solving</span>
+                </div>
               </div>
-              <Link to="/enquire" className="btn btn-outline-primary btn-block">Enquire for Batch →</Link>
+              <Link to="/enquire" className="btn btn-outline-navy btn-block">
+                Enquire for Batch →
+              </Link>
             </div>
           </div>
         </div>
