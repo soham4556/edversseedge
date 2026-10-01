@@ -127,27 +127,44 @@ function CareersPage() {
     }
   };
 
+  const fileToBase64 = (file) =>
+    new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (error) => reject(error);
+    });
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setStatus({ type: "", message: "" });
 
     try {
-      const payload = new FormData();
-      Object.keys(formData).forEach((key) => {
-        payload.append(key, formData[key]);
-      });
-
+      let resumeBase64 = null;
       if (resumeFile) {
-        payload.append("resume", resumeFile);
+        resumeBase64 = await fileToBase64(resumeFile);
       }
 
       const response = await fetch("/api/careers/apply", {
         method: "POST",
-        body: payload,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          resumeBase64,
+          resumeName: resumeFile ? resumeFile.name : null,
+          resumeSize: resumeFile ? resumeFile.size : null,
+        }),
       });
 
-      const data = await response.json();
+      const contentType = response.headers.get("content-type");
+      let data = {};
+      if (contentType && contentType.includes("application/json")) {
+        data = await response.json();
+      } else {
+        const text = await response.text();
+        throw new Error(text || "Non-JSON response from server");
+      }
 
       if (response.ok && data.success) {
         setStatus({
@@ -178,7 +195,7 @@ function CareersPage() {
       console.error("Submission error:", err);
       setStatus({
         type: "error",
-        message: "Network error connecting to API. You can also send your CV directly to edversseedge@gmail.com.",
+        message: "Failed to connect to application server. Please try again or reach out directly on WhatsApp (+91 97667 15666).",
       });
     } finally {
       setLoading(false);
@@ -606,9 +623,6 @@ function CareersPage() {
                   >
                     {loading ? "⏳ Submitting & Dispatching Email..." : "🚀 Submit Faculty Application →"}
                   </button>
-                  <p className="privacy-note text-center mt-2">
-                    🔒 Direct SMTP delivery to Sudhaanshu Sir. You will receive an immediate confirmation on your email.
-                  </p>
                 </div>
               </form>
             )}

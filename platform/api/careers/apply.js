@@ -1,58 +1,27 @@
-import express from "express";
-import cors from "cors";
-import dotenv from "dotenv";
 import nodemailer from "nodemailer";
-import multer from "multer";
 
-dotenv.config();
-
-const app = express();
-const PORT = process.env.PORT || 5000;
-
-app.use(cors());
-app.use(express.json({ limit: "15mb" }));
-app.use(express.urlencoded({ limit: "15mb", extended: true }));
-
-// In-memory Multer storage for attached resumes (keeps server stateless & fast)
-const storage = multer.memoryStorage();
-const upload = multer({
-  storage,
-  limits: { fileSize: 10 * 1024 * 1024 }, // 10MB max
-  fileFilter: (req, file, cb) => {
-    const allowed = [
-      "application/pdf",
-      "application/msword",
-      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-    ];
-    if (allowed.includes(file.mimetype) || file.originalname.match(/\.(pdf|doc|docx)$/i)) {
-      cb(null, true);
-    } else {
-      cb(new Error("Please upload a valid PDF or Word document (.pdf, .doc, .docx)"));
-    }
+export const config = {
+  api: {
+    bodyParser: {
+      sizeLimit: "10mb",
+    },
   },
-});
+};
 
-// Configure Nodemailer with Gmail SMTP
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.SMTP_USER || "edversseedge@gmail.com",
-    pass: process.env.SMTP_PASS || "rvuwylcbvgbpedfx",
-  },
-});
+export default async function handler(req, res) {
+  // Enable CORS
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-// Health & SMTP verification check
-app.get("/api/health", async (req, res) => {
-  try {
-    await transporter.verify();
-    res.json({ status: "ok", smtp: "connected", email: process.env.SMTP_USER });
-  } catch (err) {
-    res.status(500).json({ status: "error", smtp: "failed", error: err.message });
+  if (req.method === "OPTIONS") {
+    return res.status(200).end();
   }
-});
 
-// Endpoint: Teacher / Faculty Application
-app.post("/api/careers/apply", upload.single("resume"), async (req, res) => {
+  if (req.method !== "POST") {
+    return res.status(405).json({ success: false, message: "Method not allowed. Use POST." });
+  }
+
   try {
     const {
       fullName,
@@ -65,7 +34,9 @@ app.post("/api/careers/apply", upload.single("resume"), async (req, res) => {
       puneAreas,
       currentRole,
       message,
-    } = req.body;
+      resumeBase64,
+      resumeName,
+    } = req.body || {};
 
     if (!fullName || !email || !phone) {
       return res.status(400).json({
@@ -74,27 +45,33 @@ app.post("/api/careers/apply", upload.single("resume"), async (req, res) => {
       });
     }
 
-    const adminEmail = process.env.ADMIN_EMAIL || "edversseedge@gmail.com";
+    const SMTP_USER = process.env.SMTP_USER || "edversseedge@gmail.com";
+    const SMTP_PASS = process.env.SMTP_PASS || "rvuwylcbvgbpedfx";
+    const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "edversseedge@gmail.com";
+
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: SMTP_USER,
+        pass: SMTP_PASS,
+      },
+    });
+
     const appliedTime = new Date().toLocaleString("en-IN", {
       timeZone: "Asia/Kolkata",
       dateStyle: "full",
       timeStyle: "medium",
     });
 
-    // Attachments for Admin Email (if resume uploaded)
+    // Attachments for Admin Email (if resume uploaded via base64)
     const attachments = [];
-    if (req.file) {
+    if (resumeBase64) {
+      const base64Data = resumeBase64.includes("base64,")
+        ? resumeBase64.split("base64,")[1]
+        : resumeBase64;
+
       attachments.push({
-        filename: req.file.originalname,
-        content: req.file.buffer,
-        contentType: req.file.mimetype,
-      });
-    } else if (req.body.resumeBase64) {
-      const base64Data = req.body.resumeBase64.includes("base64,")
-        ? req.body.resumeBase64.split("base64,")[1]
-        : req.body.resumeBase64;
-      attachments.push({
-        filename: req.body.resumeName || "Resume.pdf",
+        filename: resumeName || "Resume.pdf",
         content: Buffer.from(base64Data, "base64"),
         contentType: "application/pdf",
       });
@@ -107,7 +84,7 @@ app.post("/api/careers/apply", upload.single("resume"), async (req, res) => {
     <head>
       <meta charset="utf-8">
       <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f1f5f9; margin: 0; padding: 24px; color: #0f172a; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f1f5f9; margin: 0; padding: 24px; color: #0f172a; }
         .mail-card { max-width: 650px; margin: 0 auto; background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.08); border: 1px solid #e2e8f0; }
         .mail-header { background: linear-gradient(135deg, #071324 0%, #0f274a 100%); color: #ffffff; padding: 28px 32px; }
         .mail-badge { display: inline-block; background: #f59e0b; color: #071324; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; padding: 4px 12px; border-radius: 999px; margin-bottom: 8px; }
@@ -121,9 +98,8 @@ app.post("/api/careers/apply", upload.single("resume"), async (req, res) => {
         .details-table th, .details-table td { padding: 12px 14px; text-align: left; font-size: 14px; border-bottom: 1px solid #f1f5f9; }
         .details-table th { width: 35%; color: #64748b; font-weight: 600; background: #fafcff; }
         .details-table td { color: #0f172a; font-weight: 700; }
-        .tag-pill { display: inline-block; background: #e0f2fe; color: #0369a1; padding: 3px 8px; border-radius: 6px; font-size: 12px; font-weight: 600; margin: 2px 4px 2px 0; }
         .msg-box { background: #fafcff; border: 1px dashed #cbd5e1; border-radius: 10px; padding: 16px; font-size: 14px; line-height: 1.6; color: #334155; margin-bottom: 24px; }
-        .attachment-alert { background: #ecfdf5; border: 1px solid #10b981; border-radius: 10px; padding: 12px 16px; color: #065f46; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+        .attachment-alert { background: #ecfdf5; border: 1px solid #10b981; border-radius: 10px; padding: 12px 16px; color: #065f46; font-size: 13px; font-weight: 600; }
         .mail-footer { background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 20px 32px; font-size: 12px; color: #94a3b8; text-align: center; }
       </style>
     </head>
@@ -181,15 +157,15 @@ app.post("/api/careers/apply", upload.single("resume"), async (req, res) => {
           }
 
           ${
-            req.file
+            attachments.length > 0
               ? `
             <div class="attachment-alert">
-              📎 <strong>Resume Attached:</strong> ${req.file.originalname} (${(req.file.size / 1024).toFixed(1)} KB)
+              📎 <strong>Resume Attached:</strong> ${resumeName || "Candidate_Resume.pdf"} (Directly attached to this email)
             </div>
           `
               : `
             <div style="color: #b45309; background: #fffbeb; padding: 10px 14px; border-radius: 8px; font-size: 13px;">
-              ℹ️ No resume PDF was attached. Contact candidate directly on phone or email.
+              ℹ️ No resume PDF was attached. Candidate can be contacted directly by phone or email.
             </div>
           `
           }
@@ -209,16 +185,15 @@ app.post("/api/careers/apply", upload.single("resume"), async (req, res) => {
     <head>
       <meta charset="utf-8">
       <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; margin: 0; padding: 24px; color: #0f172a; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f8fafc; margin: 0; padding: 24px; color: #0f172a; }
         .mail-card { max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.07); border: 1px solid #e2e8f0; }
         .mail-header { background: radial-gradient(circle at 50% 0%, #0f274a 0%, #071324 100%); color: #ffffff; padding: 36px 32px; text-align: center; }
-        .brand-name { font-size: 24px; font-weight: 900; letter-spacing: -0.02em; color: #ffffff; margin-bottom: 4px; }
+        .brand-name { font-size: 24px; font-weight: 900; color: #ffffff; margin-bottom: 4px; }
         .brand-gold { color: #f59e0b; }
         .mail-header h1 { font-size: 20px; font-weight: 800; margin: 12px 0 0 0; }
         .mail-body { padding: 32px; line-height: 1.7; font-size: 15px; color: #334155; }
         .steps-card { background: #f8fafc; border-radius: 12px; padding: 20px; margin: 24px 0; border: 1px solid #e2e8f0; }
         .step-item { display: flex; gap: 12px; margin-bottom: 12px; align-items: flex-start; }
-        .step-item:last-child { margin-bottom: 0; }
         .step-badge { width: 24px; height: 24px; border-radius: 50%; background: #071324; color: #f59e0b; font-weight: 800; font-size: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .signoff { margin-top: 28px; padding-top: 20px; border-top: 1px solid #f1f5f9; }
         .mail-footer { background: #f8fafc; border-top: 1px solid #e2e8f0; padding: 20px; font-size: 12px; color: #94a3b8; text-align: center; }
@@ -281,8 +256,8 @@ app.post("/api/careers/apply", upload.single("resume"), async (req, res) => {
 
     // Dispatch Email 1: To Admin / Sir
     await transporter.sendMail({
-      from: `"EdversseEDGE Careers Portal" <${process.env.SMTP_USER || "edversseedge@gmail.com"}>`,
-      to: adminEmail,
+      from: `"EdversseEDGE Careers Portal" <${SMTP_USER}>`,
+      to: ADMIN_EMAIL,
       replyTo: email,
       subject: `🎓 Teacher Application: ${fullName} (${subjects || "Educator"}) — EdversseEDGE Pune`,
       html: adminMailHtml,
@@ -291,7 +266,7 @@ app.post("/api/careers/apply", upload.single("resume"), async (req, res) => {
 
     // Dispatch Email 2: To Applicant
     await transporter.sendMail({
-      from: `"Sudhaanshu Sir (EdversseEDGE)" <${process.env.SMTP_USER || "edversseedge@gmail.com"}>`,
+      from: `"Sudhaanshu Sir (EdversseEDGE)" <${SMTP_USER}>`,
       to: email,
       subject: `Application Received — Educator Faculty at EdversseEDGE Pune`,
       html: applicantMailHtml,
@@ -302,85 +277,11 @@ app.post("/api/careers/apply", upload.single("resume"), async (req, res) => {
       message: "Application submitted successfully! Notification sent to administration and confirmation emailed to candidate.",
     });
   } catch (error) {
-    console.error("Error sending career application email:", error);
+    console.error("Vercel Serverless Function Error in /api/careers/apply:", error);
     return res.status(500).json({
       success: false,
       message: "Failed to process application. Please try again or reach out on WhatsApp.",
       error: error.message,
     });
   }
-});
-
-// Endpoint: Student / Parent Enquiry Email Dispatch
-app.post("/api/enquire", async (req, res) => {
-  try {
-    const { name, phone, studentClass, format, subject, area, message } = req.body;
-
-    if (!name || !phone) {
-      return res.status(400).json({ success: false, message: "Name and Phone are required." });
-    }
-
-    const adminEmail = process.env.ADMIN_EMAIL || "edversseedge@gmail.com";
-    const enquiryTime = new Date().toLocaleString("en-IN", {
-      timeZone: "Asia/Kolkata",
-      dateStyle: "full",
-      timeStyle: "medium",
-    });
-
-    const enquiryHtml = `
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <meta charset="utf-8">
-      <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8fafc; padding: 20px; color: #0f172a; }
-        .card { max-width: 580px; margin: 0 auto; background: #ffffff; border-radius: 14px; overflow: hidden; border: 1px solid #e2e8f0; }
-        .header { background: #071324; color: #ffffff; padding: 24px; }
-        .badge { background: #10b981; color: #ffffff; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; text-transform: uppercase; }
-        .body { padding: 24px; }
-        .table { width: 100%; border-collapse: collapse; margin-top: 14px; }
-        .table th, .table td { padding: 10px 12px; border-bottom: 1px solid #f1f5f9; text-align: left; font-size: 14px; }
-        .table th { width: 35%; color: #64748b; }
-        .table td { color: #0f172a; font-weight: 700; }
-      </style>
-    </head>
-    <body>
-      <div class="card">
-        <div class="header">
-          <span class="badge">New Tuition Lead</span>
-          <h2 style="margin: 8px 0 0 0; font-size: 20px;">Demo / Tuition Enquiry</h2>
-          <p style="margin: 4px 0 0 0; color: #94a3b8; font-size: 12px;">Received on ${enquiryTime}</p>
-        </div>
-        <div class="body">
-          <table class="table">
-            <tr><th>Parent / Student</th><td>${name}</td></tr>
-            <tr><th>Phone / WhatsApp</th><td><a href="tel:${phone}">${phone}</a></td></tr>
-            <tr><th>Student Class</th><td>${studentClass || "Not specified"}</td></tr>
-            <tr><th>Learning Format</th><td>${format || "1-to-1 Home Tuition"}</td></tr>
-            <tr><th>Subjects</th><td>${subject || "Not specified"}</td></tr>
-            <tr><th>Pune Locality</th><td>${area || "Not specified"}</td></tr>
-            <tr><th>Requirement / Note</th><td>${message || "Looking for consultation and demo session"}</td></tr>
-          </table>
-        </div>
-      </div>
-    </body>
-    </html>
-    `;
-
-    await transporter.sendMail({
-      from: `"EdversseEDGE Leads" <${process.env.SMTP_USER || "edversseedge@gmail.com"}>`,
-      to: adminEmail,
-      subject: `📚 New Tuition Enquiry: ${name} (${studentClass || "Tuition"}) — ${area || "Pune"}`,
-      html: enquiryHtml,
-    });
-
-    return res.status(200).json({ success: true, message: "Enquiry sent successfully!" });
-  } catch (error) {
-    console.error("Error sending enquiry email:", error);
-    return res.status(500).json({ success: false, message: error.message });
-  }
-});
-
-app.listen(PORT, () => {
-  console.log(`[API Server] EdversseEDGE backend running on http://localhost:${PORT}`);
-});
+}
