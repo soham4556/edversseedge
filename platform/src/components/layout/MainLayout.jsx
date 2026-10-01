@@ -35,6 +35,10 @@ const routeSeoMeta = {
     title: "Contact EdversseEDGE Pune | Direct Connect with Sudhaanshu Sir",
     desc: "Direct access to Sudhaanshu Sir for tuition consultation, free home demo session, and batch schedules across Pune. Call or WhatsApp +91 97667 15666.",
   },
+  "/careers": {
+    title: "Careers & Faculty Recruitment in Pune | Teach With EdversseEDGE",
+    desc: "Join EdversseEDGE faculty in Pune. High-paying teaching opportunities for Physics, Chemistry, Maths & Biology educators in 1-to-1 home tuition and micro-batches.",
+  },
   "/enquire": {
     title: "Book a Free Demo Class | Personalised Tuition Enquiry | EdversseEDGE Pune",
     desc: "Book a free introductory session for 1-to-1 home tuition or micro-batch tuition in Pune. Discuss syllabus requirements with Sudhaanshu Sir.",

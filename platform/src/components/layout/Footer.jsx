@@ -59,6 +59,11 @@ function Footer() {
             <li>
               <Link to="/jee-neet">JEE & NEET Focused Prep</Link>
             </li>
+            <li>
+              <Link to="/careers" style={{ color: "#f59e0b", fontWeight: 700 }}>
+                💼 Careers (Faculty Hiring)
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -124,6 +129,8 @@ function Footer() {
             <Link to="/privacy-policy">Privacy Policy</Link>
             <span className="dot">•</span>
             <Link to="/terms-of-admission">Terms & Conditions</Link>
+            <span className="dot">•</span>
+            <Link to="/careers">Careers</Link>
             <span className="dot">•</span>
             <Link to="/contact">Contact</Link>
           </div>

@@ -8,6 +8,7 @@ import JeeNeetPage from "./pages/JeeNeetPage";
 import SeoLandingPage from "./pages/SeoLandingPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
+import CareersPage from "./pages/CareersPage";
 import EnquirePage from "./pages/EnquirePage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsOfAdmissionPage from "./pages/TermsOfAdmissionPage";
@@ -49,9 +50,12 @@ function App() {
           <Route path="/class-11-chemistry-tuition-pune" element={<SeoLandingPage />} />
           <Route path="/class-12-maths-tuition-pune" element={<SeoLandingPage />} />
 
-          {/* Institutional / Contact Pages */}
+          {/* Institutional / Contact / Careers Pages */}
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/careers" element={<CareersPage />} />
+          <Route path="/career" element={<Navigate to="/careers" replace />} />
+          <Route path="/faculty-recruitment" element={<Navigate to="/careers" replace />} />
           <Route path="/enquire" element={<EnquirePage />} />
 
           {/* Graceful Fallbacks for legacy links */}

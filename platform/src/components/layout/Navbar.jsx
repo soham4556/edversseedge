@@ -9,6 +9,7 @@ const navItems = [
   { label: "Group Tuition", to: "/group-tuition-pune" },
   { label: "Classes & Subjects", to: "/classes" },
   { label: "JEE / NEET", to: "/jee-neet" },
+  { label: "Careers", to: "/careers" },
   { label: "Contact", to: "/contact" },
 ];
 
