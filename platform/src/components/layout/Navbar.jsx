@@ -5,10 +5,10 @@ import { contactInfo } from "../../data/siteData";
 const navItems = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
-  { label: "Courses", to: "/courses" },
-  { label: "Programs", to: "/programs" },
-  { label: "Test Series", to: "/test-series" },
-  { label: "Free Mock Test", to: "/free-mock-test" },
+  { label: "Home Tuition", to: "/home-tuition-pune" },
+  { label: "Group Tuition", to: "/group-tuition-pune" },
+  { label: "Classes & Subjects", to: "/classes" },
+  { label: "JEE / NEET", to: "/jee-neet" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -17,33 +17,37 @@ function Navbar() {
 
   return (
     <>
+      {/* Top Utility Announcement Bar */}
       <div className="announcement-bar">
         <div className="page-container announcement-content">
           <div className="announcement-ticker">
             <span className="pulse-dot"></span>
             <span>
-              <strong></strong>
+              <strong>Pune Home Tuition Available</strong> — Selected Areas Across Pune
             </span>
           </div>
           <div className="announcement-links">
             <a
-              href={`tel:${contactInfo.phone.replace(/\s+/g, "")}`}
+              href={`tel:${contactInfo.phoneRaw}`}
               className="announcement-link"
+              title="Call directly"
             >
               📞 <span>{contactInfo.phoneFormatted}</span>
             </a>
             <a
-              href={contactInfo.appDownloadUrl}
+              href={contactInfo.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="announcement-link"
+              className="announcement-link announcement-wa"
+              title="Chat on WhatsApp"
             >
-              📱 <span>Get Android App</span>
+              💬 <span>WhatsApp</span>
             </a>
           </div>
         </div>
       </div>
 
+      {/* Main Navbar */}
       <header className="navbar-shell">
         <div className="page-container navbar">
           <Link to="/" className="brand-link" onClick={() => setIsOpen(false)}>
@@ -80,36 +84,37 @@ function Navbar() {
 
             <div className="nav-mobile-actions" style={{ display: isOpen ? "flex" : "none" }}>
               <a
-                href={contactInfo.webLoginUrl}
-                className="nav-login-btn"
+                href={contactInfo.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="btn btn-whatsapp-subtle"
                 onClick={() => setIsOpen(false)}
               >
-                Student Login
+                💬 WhatsApp Us
               </a>
               <Link
                 to="/enquire"
                 className="nav-cta-btn"
                 onClick={() => setIsOpen(false)}
               >
-                Book Free Demo
+                Book a Free Demo
               </Link>
             </div>
           </nav>
 
           <div className="nav-actions">
             <a
-              href={contactInfo.webLoginUrl}
-              className="nav-login-btn"
+              href={contactInfo.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
+              className="btn btn-ghost btn-sm nav-wa-btn"
+              title="Quick WhatsApp Chat"
             >
-              Student Login
+              <span>💬 WhatsApp</span>
             </a>
             <Link to="/enquire" className="nav-cta-btn">
-              <span>Book Free Demo</span>
-              <span>→</span>
+              <span>Book a Free Demo</span>
+              <span className="cta-arrow">→</span>
             </Link>
           </div>
         </div>
@@ -119,4 +124,3 @@ function Navbar() {
 }
 
 export default Navbar;
-

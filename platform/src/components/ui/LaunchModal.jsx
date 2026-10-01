@@ -7,11 +7,11 @@ function LaunchModal() {
 
   useEffect(() => {
     try {
-      const shown = sessionStorage.getItem("launchModalShown");
+      const shown = sessionStorage.getItem("tuitionDemoModalShown");
       if (!shown) {
-        // Show after 1.5 seconds on first visit
-        const timer = setTimeout(() => setOpen(true), 1500);
-        sessionStorage.setItem("launchModalShown", "1");
+        // Show after 3.5 seconds on first visit
+        const timer = setTimeout(() => setOpen(true), 3500);
+        sessionStorage.setItem("tuitionDemoModalShown", "1");
         return () => clearTimeout(timer);
       }
     } catch {
@@ -44,60 +44,56 @@ function LaunchModal() {
               width: "56px",
               height: "56px",
               borderRadius: "16px",
-              background: "#eff6ff",
+              background: "linear-gradient(135deg, #0b1f3a, #1e3a8a)",
+              color: "#fbbf24",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              fontSize: "1.75rem",
               flexShrink: 0,
             }}
           >
-            <img
-              src="/icons/android.svg"
-              alt="EdversseEDGE App"
-              style={{ width: "36px", height: "36px" }}
-            />
+            🏠
           </div>
           <div>
-            <span className="badge badge-gold" style={{ marginBottom: "6px" }}>
-              ⭐ Official Android App
+            <span className="badge badge-gold" style={{ marginBottom: "4px" }}>
+              ⭐ Personalised Academic Support in Pune
             </span>
-            <h3 id="modal-title" style={{ margin: 0, fontFamily: "var(--font-heading)", fontSize: "1.3rem", color: "var(--brand-navy)" }}>
-              Take EdversseEDGE Everywhere
+            <h3 id="modal-title" style={{ margin: 0, fontFamily: "var(--font-heading)", fontSize: "1.25rem", color: "var(--brand-navy)" }}>
+              Need a Home Tutor for Your Child?
             </h3>
           </div>
         </div>
 
-        <p style={{ color: "#475569", lineHeight: 1.6, margin: "0 0 20px" }}>
-          Access live & recorded video lectures, daily practice problems (DPP),
-          adaptive test analytics, and 1-on-1 mentor doubt resolution directly on
-          your Android device.
+        <p style={{ color: "#475569", lineHeight: 1.6, margin: "0 0 20px", fontSize: "0.95rem" }}>
+          Get 1-to-1 dedicated attention or small-group learning for <strong>Classes 8–12 (CBSE & State Board)</strong> in Pune. Focused conceptual teaching in Physics, Chemistry & Maths with <strong>Sudhaanshu Srivastavaa</strong> (12+ Yrs Exp).
         </p>
 
-        <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-          <a
-            href={contactInfo.appDownloadUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+        <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", alignItems: "center" }}>
+          <Link
+            to="/enquire"
             className="btn btn-primary"
             onClick={() => setOpen(false)}
           >
-            <span>Get on Google Play</span>
+            <span>Book a Free Demo</span>
             <span>→</span>
-          </a>
-          <Link
-            to="/enquire"
-            className="btn btn-ghost"
+          </Link>
+          <a
+            href={contactInfo.whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-whatsapp-subtle"
             onClick={() => setOpen(false)}
           >
-            Book Free Demo
-          </Link>
+            💬 WhatsApp Us
+          </a>
           <button
             type="button"
-            className="btn btn-secondary btn-sm"
+            className="btn btn-ghost btn-sm"
             onClick={() => setOpen(false)}
-            style={{ marginLeft: "auto" }}
+            style={{ marginLeft: "auto", color: "#64748b" }}
           >
-            Maybe Later
+            Close
           </button>
         </div>
       </div>
@@ -106,4 +102,3 @@ function LaunchModal() {
 }
 
 export default LaunchModal;
-

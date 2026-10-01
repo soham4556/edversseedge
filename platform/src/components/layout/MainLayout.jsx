@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import MobileStickyBar from "./MobileStickyBar";
 import LaunchModal from "../ui/LaunchModal";
 import { contactInfo } from "../../data/siteData";
 
@@ -14,8 +15,8 @@ function MainLayout() {
       </main>
       <Footer />
 
-      {/* Floating Action Buttons */}
-      <div className="floating-actions" aria-label="Quick contact options">
+      {/* Desktop Floating Actions */}
+      <div className="floating-actions desktop-only" aria-label="Quick contact options">
         <a
           className="floating-whatsapp"
           href={contactInfo.whatsappLink}
@@ -23,21 +24,23 @@ function MainLayout() {
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp"
         >
-          <span>💬</span>
-          <span>Chat on WhatsApp</span>
+          <span className="floating-icon">💬</span>
+          <span className="floating-text">Chat on WhatsApp</span>
         </a>
         <a
           className="floating-call"
-          href={`tel:${contactInfo.phone.replace(/\s+/g, "")}`}
+          href={`tel:${contactInfo.phoneRaw}`}
           aria-label={`Call ${contactInfo.phoneFormatted}`}
         >
-          <span>📞</span>
-          <span>Call: {contactInfo.phoneFormatted}</span>
+          <span className="floating-icon">📞</span>
+          <span className="floating-text">{contactInfo.phoneFormatted}</span>
         </a>
       </div>
+
+      {/* Mobile Fixed Call + WhatsApp + Demo bar */}
+      <MobileStickyBar />
     </div>
   );
 }
 
 export default MainLayout;
-
