@@ -1,0 +1,6 @@
+# robots.txt for EdversseEDGE
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://www.edversseedge.com/sitemap.xml
