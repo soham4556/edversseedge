@@ -5479,13 +5479,52 @@
   margin: 0;
 }
 
+.classes-filter-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.classes-filter-btn {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.classes-filter-btn:hover {
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+.classes-filter-btn.active {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
 .classes-deep-card {
   background: #ffffff;
-  border: 1px solid #e2e8f0;
+  border: 1.5px solid #e2e8f0;
   border-radius: 24px;
-  padding: clamp(28px, 4vw, 40px);
-  margin-bottom: 32px;
+  padding: clamp(20px, 3.5vw, 36px);
+  margin-bottom: 28px;
   box-shadow: 0 6px 24px rgba(15, 23, 42, 0.05);
+  transition: all 0.25s ease;
+}
+
+.classes-deep-card:hover {
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+  border-color: #cbd5e1;
 }
 
 .classes-deep-header {
@@ -5498,34 +5537,43 @@
 
 .classes-deep-header h2 {
   font-family: var(--font-heading);
-  font-size: 1.7rem;
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
   font-weight: 800;
   color: var(--brand-navy);
-  margin: 6px 0 2px 0;
+  margin: 8px 0 4px 0;
+  line-height: 1.25;
+}
+
+.sub-heading-text {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0;
+  font-weight: 600;
 }
 
 .boards-pill-tag {
   background: #f1f5f9;
   border: 1px solid #cbd5e1;
   color: #1e293b;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
   padding: 6px 14px;
   border-radius: 999px;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .class-narrative-desc {
-  font-size: 1rem;
+  font-size: 0.96rem;
   color: #475569;
   line-height: 1.6;
-  margin: 0 0 24px 0;
+  margin: 0 0 20px 0;
 }
 
 .subjects-table-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
   margin-bottom: 24px;
 }
 
@@ -5536,6 +5584,12 @@
   padding: 16px;
   display: flex;
   gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.subject-item-box:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
 }
 
 .subject-box-num {
@@ -5543,21 +5597,22 @@
   font-size: 1rem;
   font-weight: 800;
   color: #2563eb;
+  flex-shrink: 0;
 }
 
 .subject-box-meta strong {
   display: block;
   font-family: var(--font-heading);
   color: var(--brand-navy);
-  font-size: 1rem;
-  margin-bottom: 2px;
+  font-size: 0.98rem;
+  margin-bottom: 3px;
 }
 
 .subject-box-meta p {
   font-size: 0.82rem;
   color: #64748b;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .class-card-action-bar {
@@ -5567,7 +5622,98 @@
   border-top: 1px solid #f1f5f9;
   padding-top: 20px;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 14px;
+}
+
+.duration-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  color: #64748b;
+}
+
+.duration-note strong {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.action-buttons-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-whatsapp-subtle {
+  background: #ecfdf5;
+  color: #047857;
+  border: 1.5px solid #10b981;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 0.88rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-whatsapp-subtle:hover {
+  background: #10b981;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+@media (max-width: 768px) {
+  .classes-deep-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .boards-pill-tag {
+    align-self: flex-start;
+    white-space: normal;
+    font-size: 0.74rem;
+    padding: 4px 10px;
+  }
+
+  .subjects-table-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .class-card-action-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .action-buttons-wrap {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .action-buttons-wrap .btn,
+  .action-buttons-wrap .btn-whatsapp-subtle {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 14px;
+    box-sizing: border-box;
+  }
+
+  .duration-note {
+    width: 100%;
+    justify-content: flex-start;
+  }
 }
 
 .jee-tracks-grid {

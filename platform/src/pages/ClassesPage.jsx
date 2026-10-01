@@ -1,7 +1,22 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { classesAndSubjects, contactInfo } from "../data/siteData";
 
 function ClassesPage() {
+  const [selectedFilter, setSelectedFilter] = useState("all");
+
+  const filterTabs = [
+    { id: "all", label: "All Standards" },
+    { id: "classes-8-10", label: "Classes 8–10 (Foundation)" },
+    { id: "classes-11-12", label: "Classes 11–12 (Junior College)" },
+    { id: "competitive-prep", label: "JEE & NEET Track" },
+  ];
+
+  const displayedClasses =
+    selectedFilter === "all"
+      ? classesAndSubjects
+      : classesAndSubjects.filter((c) => c.id === selectedFilter);
+
   return (
     <div className="page-shell classes-page">
       <section className="page-header-banner">
@@ -32,7 +47,21 @@ function ClassesPage() {
 
       <section className="tuition-section">
         <div className="page-container">
-          {classesAndSubjects.map((item, index) => (
+          {/* Filter Bar */}
+          <div className="classes-filter-bar">
+            {filterTabs.map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                className={`classes-filter-btn ${selectedFilter === tab.id ? "active" : ""}`}
+                onClick={() => setSelectedFilter(tab.id)}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          {displayedClasses.map((item) => (
             <div key={item.id} className="classes-deep-card">
               <div className="classes-deep-header">
                 <div>
@@ -61,12 +90,12 @@ function ClassesPage() {
 
               <div className="class-card-action-bar">
                 <div className="duration-note">
-                  <span>Schedule: </span>
+                  <span>⏱️ Schedule: </span>
                   <strong>{item.duration}</strong>
                 </div>
                 <div className="action-buttons-wrap">
                   <Link to="/enquire" className="btn btn-primary btn-sm">
-                    Book Demo for {item.title} →
+                    Book Free Demo →
                   </Link>
                   <a
                     href={`https://wa.me/919766715666?text=Hello%2C%20I%20want%20to%20enquire%20about%20${encodeURIComponent(item.title)}%20tuition%20in%20Pune.`}
