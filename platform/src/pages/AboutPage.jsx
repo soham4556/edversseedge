@@ -105,7 +105,7 @@ function AboutPage() {
                   </div>
                   <div className="founder-stat-card">
                     <span className="stat-icon">🎯</span>
-                    <strong className="stat-val">Classes 8–12 &amp; JEE/NEET</strong>
+                    <strong className="stat-val">Classes 11–12 &amp; JEE/NEET/CET</strong>
                     <span className="stat-lbl">Targeted Mentorship</span>
                   </div>
                 </div>

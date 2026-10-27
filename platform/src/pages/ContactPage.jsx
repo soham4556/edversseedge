@@ -55,7 +55,7 @@ function ContactPage() {
     },
     {
       q: "Who conducts the classes — Sudhaanshu Sir or junior teachers?",
-      a: "Unlike generic tutor agencies or aggregator platforms that assign unverified college students, all high-stakes Physics, Chemistry, and competitive classes (Classes 8–12, CBSE, JEE & NEET) are personally taught or directly supervised by Founder Sudhaanshu Srivastavaa (12+ Yrs Exp, M.Tech Bharati Vidyapeeth).",
+      a: "Unlike generic tutor agencies or aggregator platforms that assign unverified college students, all high-stakes Physics, Chemistry, and competitive classes (Classes 11–12, CBSE, State Board, JEE, NEET & MHT-CET) are personally taught or directly supervised by Founder Sudhaanshu Srivastavaa (12+ Yrs Exp, M.Tech Bharati Vidyapeeth).",
     },
     {
       q: "Do you provide regular progress updates and test assessments to parents?",
@@ -113,7 +113,7 @@ function ContactPage() {
             Connect Directly With <span className="gold-shimmer-text">Sudhaanshu Sir</span>
           </h1>
           <p className="banner-desc">
-            Personalised Home &amp; Small Group Tuition for Classes 8–12, CBSE, JEE &amp; NEET. No sales agents or tutor brokers—discuss your child's academic roadmap directly with an experienced educator.
+            Personalised Home &amp; Small Group Tuition for Classes 11–12 (CBSE &amp; Maharashtra State Board), JEE, NEET &amp; MHT-CET. No sales agents or tutor brokers—discuss your child's academic roadmap directly with an experienced educator.
           </p>
           <div className="contact-banner-trust-row">
             <span className="contact-trust-pill">
@@ -424,13 +424,13 @@ function ContactPage() {
                         onChange={handleChange}
                         className="contact-input-field"
                       >
-                        <option value="Class 8">Class 8 (CBSE / ICSE)</option>
-                        <option value="Class 9">Class 9 (CBSE / ICSE)</option>
-                        <option value="Class 10">Class 10 (Board Exam)</option>
-                        <option value="Class 11">Class 11 (Science PCM/PCB)</option>
-                        <option value="Class 12">Class 12 (Board Prep)</option>
+                        <option value="Class 11 (CBSE)">Class 11 (CBSE Science PCM/PCB)</option>
+                        <option value="Class 11 (Maharashtra State Board)">Class 11 (State Board FYJC)</option>
+                        <option value="Class 12 (CBSE)">Class 12 (CBSE Board Exam)</option>
+                        <option value="Class 12 (Maharashtra State Board)">Class 12 (State Board HSC)</option>
                         <option value="JEE Main & Advanced">JEE Main &amp; Advanced</option>
                         <option value="NEET Medical">NEET Medical Prep</option>
+                        <option value="MHT-CET Entrance">MHT-CET Entrance</option>
                       </select>
                     </div>
                   </div>

@@ -21,7 +21,7 @@ function Footer() {
             />
           </Link>
           <p className="footer-brand-desc">
-            <strong>EdversseEDGE</strong> provides personalised home tuition and small group tuition in Pune for Classes 8–12, CBSE, and competitive exam preparation including JEE and NEET. Mentored by experienced educator Sudhaanshu Srivastavaa.
+            <strong>EdversseEDGE</strong> provides personalised home tuition and small group tuition in Pune for Classes 11–12 (CBSE &amp; Maharashtra State Board), and competitive exam preparation including JEE, NEET and MHT-CET. Mentored by experienced educator Sudhaanshu Srivastavaa.
           </p>
           <div className="footer-brand-actions">
             <Link to="/enquire" className="btn btn-sm btn-accent">
@@ -51,13 +51,13 @@ function Footer() {
               <Link to="/online-tuition">Online Interactive Tuition</Link>
             </li>
             <li>
-              <Link to="/classes">Classes 8–10 (Maths & Science)</Link>
+              <Link to="/classes">Class 11 (CBSE &amp; HSC Science)</Link>
             </li>
             <li>
-              <Link to="/classes">Classes 11–12 (PCM / PCB)</Link>
+              <Link to="/classes">Class 12 (Board PCM / PCB)</Link>
             </li>
             <li>
-              <Link to="/jee-neet">JEE & NEET Focused Prep</Link>
+              <Link to="/jee-neet">JEE, NEET &amp; MHT-CET Prep</Link>
             </li>
             <li>
               <Link to="/careers" style={{ color: "#f59e0b", fontWeight: 700 }}>

@@ -50,26 +50,26 @@ function CareersPage() {
       qualification: "M.Sc / B.Tech / B.Ed in Mathematics or related field",
       remuneration: "Competitive Hourly Compensation",
       desc: "Nurture logical problem solving, Calculus, Algebra, and Geometry. Step-by-step guidance for school board excellence and foundation olympiad thinking.",
-      subjects: "Classes 9–12 Mathematics, JEE Foundation",
+      subjects: "Classes 11–12 Mathematics, JEE & MHT-CET",
     },
     {
       id: "science-bio",
-      title: "Biology & Junior Science Mentor (Classes 8–10 & NEET Early)",
+      title: "Biology & NEET Medical Faculty (Classes 11–12 & NEET)",
       badge: "Open Position",
       experience: "1+ Years Exp Required",
-      qualification: "M.Sc / B.Sc in Life Sciences, Biotechnology or General Science",
+      qualification: "M.Sc / B.Sc in Life Sciences, Biotechnology or MBBS/BDS background",
       remuneration: "Competitive Hourly Compensation",
-      desc: "Inspire curiosity in Science for high schoolers. Conceptual clarity for Class 10 Board exams and early NEET medical foundation.",
-      subjects: "Classes 8–10 Science & Class 11–12 Biology",
+      desc: "Deliver clear conceptual mastery in NCERT Biology for Classes 11–12 board examinations and high-yield NEET medical preparation.",
+      subjects: "Class 11–12 Biology & NEET Medical",
     },
   ];
 
   const quickSubjectsList = [
     "Physics (Class 11-12 / JEE / NEET)",
     "Chemistry (Class 11-12 / NEET / JEE)",
-    "Mathematics (Class 9-12 / JEE)",
+    "Mathematics (Class 11-12 / JEE / MHT-CET)",
     "Biology (Class 11-12 / NEET)",
-    "Classes 8-10 Science & Maths Foundation",
+    "MHT-CET & State Board Science",
   ];
 
   const puneLocalitiesList = [

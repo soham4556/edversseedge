@@ -33,7 +33,11 @@ function App() {
 
           {/* Classes & Subjects */}
           <Route path="/classes" element={<ClassesPage />} />
+          <Route path="/classes-11-12" element={<Navigate to="/classes" replace />} />
           <Route path="/classes-8-12" element={<Navigate to="/classes" replace />} />
+          <Route path="/class-11-tuition" element={<Navigate to="/classes" replace />} />
+          <Route path="/class-12-tuition" element={<Navigate to="/classes" replace />} />
+          <Route path="/class-8-10-tuition" element={<Navigate to="/classes" replace />} />
           <Route path="/courses" element={<Navigate to="/classes" replace />} />
           <Route path="/programs" element={<Navigate to="/group-tuition-pune" replace />} />
 

@@ -131,13 +131,13 @@ function EnquirePage() {
                       onChange={handleChange}
                       className="form-control"
                     >
-                      <option value="Class 8">Class 8</option>
-                      <option value="Class 9">Class 9</option>
-                      <option value="Class 10">Class 10</option>
-                      <option value="Class 11">Class 11 (Science)</option>
-                      <option value="Class 12">Class 12 (Science)</option>
+                      <option value="Class 11 (CBSE)">Class 11 (CBSE Science)</option>
+                      <option value="Class 11 (Maharashtra State Board)">Class 11 (State Board FYJC)</option>
+                      <option value="Class 12 (CBSE)">Class 12 (CBSE Board)</option>
+                      <option value="Class 12 (Maharashtra State Board)">Class 12 (State Board HSC)</option>
                       <option value="JEE Main & Advanced">JEE Main &amp; Advanced</option>
                       <option value="NEET Medical">NEET Medical</option>
+                      <option value="MHT-CET Entrance">MHT-CET Entrance</option>
                     </select>
                   </div>
                 </div>

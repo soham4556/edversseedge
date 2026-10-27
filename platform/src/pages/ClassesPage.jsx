@@ -6,10 +6,10 @@ function ClassesPage() {
   const [selectedFilter, setSelectedFilter] = useState("all");
 
   const filterTabs = [
-    { id: "all", label: "All Standards" },
-    { id: "classes-8-10", label: "Classes 8–10 (Foundation)" },
-    { id: "classes-11-12", label: "Classes 11–12 (Junior College)" },
-    { id: "competitive-prep", label: "JEE & NEET Track" },
+    { id: "all", label: "All Programmes" },
+    { id: "class-11", label: "Class 11 (FYJC)" },
+    { id: "class-12", label: "Class 12 (Board Prep)" },
+    { id: "competitive-prep", label: "JEE, NEET & MHT-CET" },
   ];
 
   const displayedClasses =
@@ -26,7 +26,7 @@ function ClassesPage() {
             Classes &amp; Subjects <span className="gold-shimmer-text">Taught in Pune</span>
           </h1>
           <p className="banner-desc">
-            From foundational school conceptual clarity for Classes 8–10 to rigorous Class 11–12 board and entrance prep in Physics, Chemistry, Maths &amp; Biology.
+            Specialised academic support for Classes 11–12 (CBSE &amp; Maharashtra State Board HSC) and competitive engineering &amp; medical entrance preparation (JEE, NEET &amp; MHT-CET).
           </p>
 
           <div className="banner-actions">

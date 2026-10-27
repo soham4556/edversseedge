@@ -7,7 +7,7 @@ function ScholarshipsPage() {
     name: "",
     phone: "",
     email: "",
-    currentClass: "Class 10 moving to 11",
+    currentClass: "Class 11 (CBSE / State Board FYJC)",
     mode: "Offline (Kondhwa Center)",
     date: "Upcoming Sunday",
   });
@@ -219,10 +219,9 @@ function ScholarshipsPage() {
                     setForm({ ...form, currentClass: e.target.value })
                   }
                 >
-                  <option>Class 8 moving to 9</option>
-                  <option>Class 9 moving to 10</option>
-                  <option>Class 10 moving to 11 (JEE / NEET)</option>
+                  <option>Class 11 (CBSE / State Board FYJC)</option>
                   <option>Class 11 moving to 12 (Target Batch)</option>
+                  <option>Class 12 (Board + JEE/NEET/CET)</option>
                   <option>Class 12 Passed (Repeater / Dropper)</option>
                 </select>
               </div>

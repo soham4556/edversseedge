@@ -8,20 +8,20 @@ import { contactInfo } from "../../data/siteData";
 
 const routeSeoMeta = {
   "/": {
-    title: "Home Tuition in Pune | Group Tuition for Classes 8–12 | EdversseEDGE",
-    desc: "EdversseEDGE provides personalised home tuition and small group tuition in Pune for Classes 8–12, CBSE and competitive exam preparation including JEE and NEET.",
+    title: "Home Tuition in Pune | Classes 11–12, JEE & NEET Tuition | EdversseEDGE",
+    desc: "EdversseEDGE provides personalised 1-to-1 home tuition and small group tuition in Pune for Classes 11–12 (CBSE & Maharashtra State Board), JEE Main/Advanced, NEET and MHT-CET.",
   },
   "/home-tuition-pune": {
     title: "1-to-1 Personalised Home Tuition in Pune | Doorstep Tutors | EdversseEDGE",
-    desc: "1-to-1 dedicated home tuition at your doorstep in Pune (Hadapsar, Magarpatta, Baner, Wakad, Aundh, Kothrud). Classes 8–12, CBSE, JEE & NEET preparation.",
+    desc: "1-to-1 dedicated home tuition at your doorstep in Pune (Hadapsar, Magarpatta, Baner, Wakad, Aundh, Kothrud). Classes 11–12, CBSE, State Board, JEE & NEET preparation.",
   },
   "/group-tuition-pune": {
     title: "Small Group Tuition in Pune (Max 3–6 Students) | EdversseEDGE",
-    desc: "Micro-batch interactive tuition for Classes 8–12 in Pune. Strictly limited batches with high personal attention, doubt solving, and structured test series.",
+    desc: "Micro-batch interactive tuition for Classes 11–12 in Pune. Strictly limited batches with high personal attention, doubt solving, and structured test series for Board & Entrances.",
   },
   "/classes": {
-    title: "Classes 8–12 CBSE & State Board Tuition in Pune | EdversseEDGE",
-    desc: "Comprehensive academic tuition for Classes 8–10 foundation and Classes 11–12 Science (Physics, Chemistry, Maths, Biology) in Pune.",
+    title: "Classes 11–12 CBSE & Maharashtra State Board Tuition in Pune | EdversseEDGE",
+    desc: "Comprehensive academic tuition for Classes 11–12 Science (Physics, Chemistry, Maths, Biology) and MHT-CET / JEE / NEET in Pune.",
   },
   "/jee-neet": {
     title: "JEE Main, Advanced & NEET Medical Tuition in Pune | EdversseEDGE",
@@ -79,7 +79,7 @@ function MainLayout() {
     // 2. Dynamically update page title & meta description for SEO
     const currentMeta = routeSeoMeta[location.pathname] || {
       title: "EdversseEDGE | Personalised Home & Group Tuition in Pune",
-      desc: "Personalised academic support for Classes 8–12, CBSE and competitive exam preparation with focused teaching and regular assessments in Pune.",
+      desc: "Personalised academic support for Classes 11–12 (CBSE & Maharashtra State Board), JEE, NEET & MHT-CET with focused teaching and regular assessments in Pune.",
     };
 
     document.title = currentMeta.title;

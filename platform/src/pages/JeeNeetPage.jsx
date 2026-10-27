@@ -28,15 +28,16 @@ function JeeNeetPage() {
       subjects: "Physics • Chemistry • Biology",
     },
     {
-      title: "JEE / NEET Foundation (Classes 8–10)",
-      badge: "Early Advantage",
-      desc: "Nurturing analytical curiosity and mathematical aptitude early so the student faces zero shock in Class 11.",
+      title: "MHT-CET & State Entrance Mastery",
+      badge: "State Entrance Focus",
+      desc: "Speed-optimized preparation for Maharashtra CET engineering and pharmacy admissions with complete Maharashtra State Board HSC textbook mastery.",
       features: [
-        "Algebra, Geometry and Mechanics foundations",
-        "Scientific inquiry and Olympiad-level thinking",
-        "Stress-free self-study routines established at home",
+        "Formula retention drills and fast calculation techniques",
+        "Step-marking tactics aligned with 12th HSC Board examinations",
+        "Chapter-wise mock tests matching latest MHT-CET question patterns",
+        "Targeted preparation for COEP, VJTI, PICT, and top Pune engineering/pharmacy colleges",
       ],
-      subjects: "Mathematics & Science",
+      subjects: "Physics • Chemistry • Mathematics / Biology",
     },
   ];
 
@@ -46,10 +47,10 @@ function JeeNeetPage() {
         <div className="page-container">
           <span className="badge badge-gold">Competitive Excellence</span>
           <h1 className="banner-title">
-            JEE &amp; NEET <span className="gold-shimmer-text">Personalised Tuition in Pune</span>
+            JEE, NEET &amp; MHT-CET <span className="gold-shimmer-text">Tuition in Pune</span>
           </h1>
           <p className="banner-desc">
-            Competitive exam preparation tailored to your child's pace. Focused teaching in Physics, Chemistry &amp; Maths by Sudhaanshu Srivastavaa (12+ Years Exp), harmonized with board exam success.
+            Competitive exam preparation tailored to your child's pace. Focused teaching in Physics, Chemistry &amp; Maths by Sudhaanshu Srivastavaa (12+ Years Exp), harmonized with Classes 11 &amp; 12 board exam success.
           </p>
 
           <div className="banner-actions">

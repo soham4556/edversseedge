@@ -405,8 +405,7 @@ function FreeMockTestPage() {
               >
                 <option>Class 11th</option>
                 <option>Class 12th (Appearing)</option>
-                <option>Class 12th Passed (Dropper / Repeater)</option>
-                <option>Class 9th & 10th (Foundation)</option>
+                <option>MHT-CET / JEE / NEET (Crash Course)</option>
               </select>
             </div>
 

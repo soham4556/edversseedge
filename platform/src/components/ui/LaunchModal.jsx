@@ -66,7 +66,7 @@ function LaunchModal() {
         </div>
 
         <p style={{ color: "#475569", lineHeight: 1.6, margin: "0 0 20px", fontSize: "0.95rem" }}>
-          Get 1-to-1 dedicated attention or small-group learning for <strong>Classes 8–12 (CBSE & State Board)</strong> in Pune. Focused conceptual teaching in Physics, Chemistry & Maths with <strong>Sudhaanshu Srivastavaa</strong> (12+ Yrs Exp).
+          Get 1-to-1 dedicated attention or small-group learning for <strong>Classes 11–12 (CBSE &amp; Maharashtra State Board)</strong>, along with focused <strong>JEE, NEET &amp; MHT-CET</strong> preparation in Pune with <strong>Sudhaanshu Srivastavaa</strong> (12+ Yrs Exp).
         </p>
 
         <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", alignItems: "center" }}>

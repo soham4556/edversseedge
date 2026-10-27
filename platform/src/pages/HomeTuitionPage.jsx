@@ -33,7 +33,7 @@ function HomeTuitionPage() {
             1-to-1 Personalised <span className="gold-shimmer-text">Home Tuition in Pune</span>
           </h1>
           <p className="banner-desc">
-            Dedicated one-on-one attention right in the comfort and safety of your home. Customized study plans for Classes 8–12 (CBSE & State Board), Physics, Chemistry, Maths & Biology.
+            Dedicated one-on-one attention right in the comfort and safety of your home. Customized study plans for Classes 11–12 (CBSE &amp; Maharashtra State Board), Physics, Chemistry, Maths &amp; Biology, along with JEE &amp; NEET coaching.
           </p>
 
           <div className="banner-actions">

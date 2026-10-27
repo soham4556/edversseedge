@@ -15,7 +15,7 @@ import {
 
 function HomePage() {
   const [activeFormat, setActiveFormat] = useState("home-tuition");
-  const [activeClassTab, setActiveClassTab] = useState("classes-11-12");
+  const [activeClassTab, setActiveClassTab] = useState("class-11");
   const [openFaq, setOpenFaq] = useState(0);
   const [areaSearch, setAreaSearch] = useState("");
   const [selectedArea, setSelectedArea] = useState("");
@@ -82,7 +82,7 @@ function HomePage() {
   };
 
   const activeOptionData = learningOptions.find((o) => o.id === activeFormat) || learningOptions[0];
-  const activeClassData = classesAndSubjects.find((c) => c.id === activeClassTab) || classesAndSubjects[1];
+  const activeClassData = classesAndSubjects.find((c) => c.id === activeClassTab) || classesAndSubjects[0];
 
   return (
     <div className="home-tuition-page">
@@ -113,7 +113,7 @@ function HomePage() {
             </h1>
 
             <p className="tuition-hero-lead">
-              Personalised academic support for Classes 8–12, CBSE and competitive exam preparation—with focused teaching, regular assessments and meaningful parent communication.
+              Personalised academic support for Classes 11–12 (CBSE &amp; Maharashtra State Board), JEE Main/Advanced, NEET and MHT-CET—with focused teaching, regular assessments and meaningful parent communication.
             </p>
 
             {/* Quick Highlights Checkmarks */}
@@ -290,7 +290,7 @@ function HomePage() {
       </section>
 
       {/* =========================================================================
-          3. CLASSES & SUBJECTS (Classes 8-10, Classes 11-12, JEE / NEET)
+          3. CLASSES & SUBJECTS (Class 11, Class 12, JEE / NEET / MHT-CET)
           ========================================================================= */}
       <section className="tuition-section section-classes-subjects" id="classes">
         <div className="page-container">
@@ -300,7 +300,7 @@ function HomePage() {
               Classes &amp; <span className="text-gradient">Subjects Taught</span>
             </h2>
             <p className="section-subtitle">
-              Comprehensive subject coverage from high-school conceptual foundation to competitive engineering & medical entrance exams.
+              Specialized coaching for Junior College &amp; Senior Secondary board exams alongside competitive engineering &amp; medical entrance exams (JEE, NEET, MHT-CET).
             </p>
           </div>
 
@@ -485,7 +485,7 @@ function HomePage() {
                   </div>
                   <div className="founder-stat-card">
                     <span className="stat-icon">🎯</span>
-                    <strong className="stat-val">Classes 8–12 &amp; JEE/NEET</strong>
+                    <strong className="stat-val">Classes 11–12 &amp; JEE/NEET/CET</strong>
                     <span className="stat-lbl">Targeted Mentorship</span>
                   </div>
                 </div>
@@ -849,13 +849,13 @@ function HomePage() {
                         onChange={handleInputChange}
                         className="form-control"
                       >
-                        <option value="Class 8">Class 8</option>
-                        <option value="Class 9">Class 9</option>
-                        <option value="Class 10">Class 10</option>
-                        <option value="Class 11">Class 11</option>
-                        <option value="Class 12">Class 12</option>
-                        <option value="JEE Preparation">JEE Preparation</option>
-                        <option value="NEET Preparation">NEET Preparation</option>
+                        <option value="Class 11 (CBSE)">Class 11 (CBSE)</option>
+                        <option value="Class 11 (Maharashtra State Board)">Class 11 (Maharashtra State Board)</option>
+                        <option value="Class 12 (CBSE)">Class 12 (CBSE)</option>
+                        <option value="Class 12 (Maharashtra State Board)">Class 12 (Maharashtra State Board)</option>
+                        <option value="JEE Main & Advanced">JEE Main &amp; Advanced</option>
+                        <option value="NEET Medical">NEET Medical</option>
+                        <option value="MHT-CET Entrance">MHT-CET Entrance</option>
                       </select>
                     </div>
                   </div>

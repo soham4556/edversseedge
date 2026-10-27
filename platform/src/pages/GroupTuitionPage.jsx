@@ -34,7 +34,7 @@ function GroupTuitionPage() {
             Small Group Tuition <span className="gold-shimmer-text">in Pune</span>
           </h1>
           <p className="banner-desc">
-            Limited students per batch (3 to 6 learners), interactive teaching, doubt solving, regular assessments and structured practice for Classes 8–12, CBSE and competitive exams.
+            Limited students per batch (3 to 6 learners), interactive teaching, doubt solving, regular assessments and structured practice for Classes 11–12 (CBSE &amp; Maharashtra State Board) and competitive exams (JEE / NEET / MHT-CET).
           </p>
 
           <div className="banner-actions">
@@ -89,9 +89,9 @@ function GroupTuitionPage() {
 
           <div className="batch-cards-grid">
             <div className="batch-card">
-              <span className="batch-tag">Class 10 CBSE / State</span>
-              <h3>Maths &amp; Science Board Accelerator</h3>
-              <p>NCERT line-by-line concept mastery, exemplar problems, and past 10-year board paper practice.</p>
+              <span className="batch-tag">Class 11 CBSE &amp; State</span>
+              <h3>Physics &amp; Chemistry FYJC Foundation</h3>
+              <p>Rigorous conceptual theory, textbook derivations, and numerical problem solving for Class 11.</p>
               <div className="batch-meta">
                 <div className="batch-meta-row">
                   <span className="meta-label">👥 Batch Limit:</span>

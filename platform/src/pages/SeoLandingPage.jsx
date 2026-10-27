@@ -37,7 +37,7 @@ function SeoLandingPage() {
   const page = landingData[location.pathname] || {
     title: "Personalised Tuition in Pune",
     headline: "Personalised Home & Group Tuition in Pune",
-    subhead: "Expert academic support for Classes 8–12 with focused teaching and regular assessments.",
+    subhead: "Expert academic support for Classes 11–12 (CBSE & Maharashtra State Board), JEE, NEET & MHT-CET with focused teaching and regular assessments.",
     subject: "Physics, Chemistry & Maths",
     chapters: ["Concept-First Derivations", "Step-by-Step Numericals", "NCERT Exemplar Coverage", "Regular Chapter Tests"],
   };
